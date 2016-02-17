@@ -56,13 +56,33 @@
 	            if(index == 1){
 	                $(".bg").removeClass("hide");
 	                $(".bg").addClass("animated fadeInUp");
-	                painting.painting();
+	                $(".title1").removeClass("hide").addClass("animated fadeIn");
+	                $(".sub-title1").removeClass("hide").addClass("animated fadeInUp");
+	                painting.clean();
+	                painting.painting(d3.select("#section1"));
 	            }
 	            if(index == 2){
 
 	                $(".bg").removeClass("animated fadeInUp");
+	                $(".title1").removeClass("animated fadeIn");
+	                $(".sub-title1").removeClass("animated fadeInUp");
 	                $(".bg").addClass("hide");
+	                $(".title1").addClass("hide");
+	                $(".sub-title1").addClass("hide");
 	                painting.clean();
+	                painting.painting(d3.select("#section2"));
+	            }
+
+	            if(index == 3){
+
+	                painting.clean();
+	                painting.painting(d3.select("#section3"));
+	            }
+
+	            if(index == 4){
+
+	                painting.clean();
+	                painting.painting(d3.select("#section4"));
 	            }
 
 	        }
@@ -77,17 +97,17 @@
 	 * Created by Geo on 16/2/16.
 	 */
 
-	var painting = function(){
+	var painting = function(obj){
 	    d3.select(".section").selectAll("h3").text("www11com");
 	    var width = 300;  //画布的宽度
 	    var height = 300;   //画布的高度
 
 	    var datasety = [300 , 250]; //y11,y21
-	    svg1 = d3.select(".section")     //选择文档中的body元素
+	    var svg1 = obj     //选择文档中的body元素
 	        .append("svg")          //添加一个svg元素
 	        .attr("width", width)       //设定宽度
 	        .attr("height", height)
-	        .style({"position":"absolute","bottom":0,"left":0});
+	        .style({"position":"absolute","bottom":"20%","left":0});
 	    svg1.append("line");
 	    svg1.append("line");
 
@@ -113,11 +133,11 @@
 	            }
 	        });
 
-	    svg2 = d3.select(".section")     //选择文档中的body元素
+	    var svg2 = obj     //选择文档中的body元素
 	        .append("svg")          //添加一个svg元素
 	        .attr("width", width)       //设定宽度
 	        .attr("height", height)//设定高度
-	        .style({"position":"absolute","top":0,"right":0});
+	        .style({"position":"absolute","top":"8%","right":0});
 
 	    svg2.append("line");
 	    svg2.append("line");
@@ -153,26 +173,25 @@
 	            }
 	        });
 
-	    svg3 = d3.select(".section")     //选择文档中的body元素
+	    var svg3 = obj     //选择文档中的body元素
 	        .append("svg")          //添加一个svg元素
 	        .attr("width", width)       //设定宽度
-	        .attr("height", 400)
+	        .attr("height", 900)
 	        .style({"position":"absolute","top":0,"left":0});
 
-	    svg3.append("path").attr("d"," M 10 25 L 10 75 L 60 75 L 10 25").attr("stroke","blue").attr("stroke-width","2").attr("fill","blue")
+	    svg3.append("path").attr("d"," M 60 205 L 130 165 L 140 275 L 60 205").attr("stroke","#3981cb").attr("stroke-width","2").attr("fill","#3981cb")
 	        .style("opacity",0).transition().duration(1000).delay(500).style("opacity",1);
-	    svg3.append("path").attr("d"," M 60 125 L 70 75 L 110 105 L 60 125").attr("stroke","blue").attr("stroke-width","2").attr("fill","blue")
-	        .style("opacity",0).transition().duration(1000).delay(1000).style("opacity",1);
-	    svg3.append("path").attr("d"," M 60 205 L 90 165 L 150 155 L 60 205").attr("stroke","blue").attr("stroke-width","2").attr("fill","blue")
-	        .style("opacity",0).transition().duration(1000).delay(1500).style("opacity",1);
-
+	    svg3.append("path").attr("d"," M 90 365 L 100 315 L 130 335 L 90 365").attr("stroke","#3981cb").attr("stroke-width","2").attr("fill","#3981cb")
+	        .style("opacity",0).transition().duration(1000).delay(1000).style("opacity",0.7);
+	    svg3.append("path").attr("d"," M 70 475 L 130 555 L 200 440").attr("stroke","#3981cb").attr("stroke-width","2").attr("fill","#3981cb")
+	        .style({"opacity":0,}).transition().duration(1000).delay(1500).style("opacity",1);
+	    svg3.append("path").attr("d"," M 40 625 L 60 655 L 70 625").attr("stroke","#3981cb").attr("stroke-width","2").attr("fill","#3981cb")
+	        .style("opacity",0).transition().duration(1000).delay(2000).style("opacity",0.8);
 
 	}
 
 	var clean = function(){
-	    svg1.remove();
-	    svg2.remove();
-	    svg3.remove();
+	    d3.selectAll("svg").remove();
 	}
 
 	module.exports = {
