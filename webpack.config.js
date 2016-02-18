@@ -14,7 +14,9 @@ module.exports = {
         filename: "[name].js"
     },
     module: {
-
+        loaders: [
+            {test: /.css$/, loader: "style!css"}
+        ]
     },
     resolve: {
         root: [path.join(__dirname, "bower_components")]
