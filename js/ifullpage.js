@@ -2,6 +2,11 @@
  * Created by Geo on 16/2/16.
  */
 
+
+
+var $ = require("jquery");
+require("fullpage.js");
+
 var painting = require('./d3.js');
     $('#fullpage').fullpage({
         afterLoad: function(anchorLink, index){
