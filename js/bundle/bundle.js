@@ -56,47 +56,51 @@
 	var painting = __webpack_require__(3);
 
 	$(document).ready(function() {
-	    $(".loading").hide();
-	    $("html").css("opacity",1);
+	    setTimeout(function(){
+	        $(".loading").hide();
 
-	    $('#fullpage').fullpage({
-	        afterLoad: function (anchorLink, index) {
-	            var loadedSection = $(this);
-	            //using index
-	            if (index == 1) {
-	                $(".bg").removeClass("hide");
-	                $(".bg").addClass("animated fadeInUp");
-	                $(".title1").removeClass("hide").addClass("animated fadeIn");
-	                $(".sub-title1").removeClass("hide").addClass("animated fadeInUp");
-	                painting.clean();
-	                painting.painting(d3.select("#section1"));
+	        $("#fullpage").css("opacity",1);
+	        $('#fullpage').fullpage({
+	            afterLoad: function (anchorLink, index) {
+	                var loadedSection = $(this);
+	                //using index
+	                if (index == 1) {
+	                    $(".bg").removeClass("hide");
+	                    $(".bg").addClass("animated fadeInUp");
+	                    $(".title1").removeClass("hide").addClass("animated fadeIn");
+	                    $(".sub-title1").removeClass("hide").addClass("animated fadeInUp");
+	                    painting.clean();
+	                    painting.painting(d3.select("#section1"));
+	                }
+	                if (index == 2) {
+
+	                    $(".bg").removeClass("animated fadeInUp");
+	                    $(".title1").removeClass("animated fadeIn");
+	                    $(".sub-title1").removeClass("animated fadeInUp");
+	                    $(".bg").addClass("hide");
+	                    $(".title1").addClass("hide");
+	                    $(".sub-title1").addClass("hide");
+	                    painting.clean();
+	                    painting.painting(d3.select("#section2"));
+	                }
+
+	                if (index == 3) {
+
+	                    painting.clean();
+	                    painting.painting(d3.select("#section3"));
+	                }
+
+	                if (index == 4) {
+
+	                    painting.clean();
+	                    painting.painting(d3.select("#section4"));
+	                }
+
 	            }
-	            if (index == 2) {
+	        });
 
-	                $(".bg").removeClass("animated fadeInUp");
-	                $(".title1").removeClass("animated fadeIn");
-	                $(".sub-title1").removeClass("animated fadeInUp");
-	                $(".bg").addClass("hide");
-	                $(".title1").addClass("hide");
-	                $(".sub-title1").addClass("hide");
-	                painting.clean();
-	                painting.painting(d3.select("#section2"));
-	            }
+	    },3000)
 
-	            if (index == 3) {
-
-	                painting.clean();
-	                painting.painting(d3.select("#section3"));
-	            }
-
-	            if (index == 4) {
-
-	                painting.clean();
-	                painting.painting(d3.select("#section4"));
-	            }
-
-	        }
-	    });
 	});
 
 /***/ },

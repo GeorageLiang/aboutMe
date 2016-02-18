@@ -3,7 +3,7 @@ html{
     height: 100%;
     margin: 0;
     font-family: Helvetica,sans-serif;
-    opacity: 0;
+
 }
 
 body{
@@ -144,4 +144,7 @@ body{
 }
 .loading img{
     margin-top: 50%;
+}
+#fullpage{
+    opacity: 0;
 }
