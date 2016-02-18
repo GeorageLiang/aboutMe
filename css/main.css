@@ -143,9 +143,10 @@ body{
     text-align: center;
     background-color: #333;
 }
-.loading img{
-    margin-top: 50%;
-    width: 100px;
+.loading .loader-inner{
+    top: 50%;
+    position: absolute;
+    left: 50%;
 }
 #fullpage{
     opacity: 0;

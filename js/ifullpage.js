@@ -6,7 +6,6 @@
 
 var $ = require("jquery");
 require("fullpage.js");
-
 var painting = require('./d3.js');
 
 $(document).ready(function() {
@@ -53,6 +52,6 @@ $(document).ready(function() {
             }
         });
 
-    },3000)
+    },300000)
 
 });

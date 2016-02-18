@@ -52,7 +52,6 @@
 
 	var $ = __webpack_require__(1);
 	__webpack_require__(2);
-
 	var painting = __webpack_require__(3);
 
 	$(document).ready(function() {
@@ -99,7 +98,7 @@
 	            }
 	        });
 
-	    },3000)
+	    },300000)
 
 	});
 
