@@ -12,10 +12,7 @@ $(document).ready(function() {
     setTimeout(function(){
         $("#fullpage").css("opacity",1);
         $(".loading").hide();
-
             $('#fullpage').fullpage({
-
-
                 afterLoad: function (anchorLink, index) {
                     var loadedSection = $(this);
                     //using index
