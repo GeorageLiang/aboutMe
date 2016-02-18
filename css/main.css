@@ -145,6 +145,7 @@ body{
 }
 .loading img{
     margin-top: 50%;
+    width: 100px;
 }
 #fullpage{
     opacity: 0;
