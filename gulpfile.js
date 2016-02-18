@@ -6,6 +6,9 @@ var bowerFiles = require('main-bower-files');
 var webpack = require("webpack");
 var webpackConfig = require("./webpack.config.js");
 
+
+var imagemin = require('gulp-imagemin');
+var imageResize = require('gulp-image-resize');
 gulp.task('browser-sync', function() {
     browserSync.init({
         port: 3011,
@@ -43,4 +46,19 @@ gulp.task("webpack", function(callback) {
             callback();
         });
 });
+
+gulp.task('imagemin', function(){
+
+    return gulp.src(config.src)
+        .pipe(imagemin())
+        .pipe(gulp.dest(config.dest))
+})
+gulp.task('resize', function () {
+    gulp.src('imgs/me.png')
+        .pipe(imageResize({
+            width : 896
+        }))
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.watch('js/*.js', ['serve']);
