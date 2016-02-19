@@ -14,6 +14,7 @@ var imageResize = require('gulp-image-resize');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
+var minifycss = require('gulp-minify-css');
 
 var del = require('del');
 
@@ -88,7 +89,18 @@ gulp.task('uglify', function(){
         .pipe(gulp.dest('js/min/'));
 });
 
+
+gulp.task('css', function() {
+    return gulp.src('css/*.css')
+        .pipe(concat('main1.css'))
+        .pipe(gulp.dest('css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(minifycss())
+        .pipe(gulp.dest('css'));
+});
+
+
 gulp.task('clean', function(){
-    del(['js/min/all.js']);
+    del(['js/min/all.js','css/main.css','css/animate.min.css','css/main1.css']);
 });
 gulp.watch('js/*.js', ['serve']);
