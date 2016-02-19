@@ -11,6 +11,12 @@ var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var imageResize = require('gulp-image-resize');
 
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
+
+var del = require('del');
+
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -25,6 +31,10 @@ gulp.task('browser-sync', function() {
 gulp.task('serve',['webpack','inject','browser-sync'],function(){
     console.log('end done');
 });
+
+//gulp.task('build',['uglify','clean'],function(){
+//    console.log('end done');
+//});
 
 
 gulp.task('inject', function () {
@@ -58,7 +68,8 @@ gulp.task('imagemin', function(){
             use: [pngquant({quality: '65-80'})]
         }))
         .pipe(gulp.dest('dist'))
-})
+});
+
 gulp.task('resize', function () {
     gulp.src('imgs/me1.png')
         .pipe(imageResize({
@@ -67,4 +78,17 @@ gulp.task('resize', function () {
         .pipe(gulp.dest('dist'));
 });
 
+
+gulp.task('uglify', function(){
+    return gulp.src('js/bundle/*.js')
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('js/min'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(gulp.dest('js/min/'));
+});
+
+gulp.task('clean', function(){
+    del(['js/min/all.js']);
+});
 gulp.watch('js/*.js', ['serve']);
