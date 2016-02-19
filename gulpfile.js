@@ -8,7 +8,10 @@ var webpackConfig = require("./webpack.config.js");
 
 
 var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 var imageResize = require('gulp-image-resize');
+
+
 gulp.task('browser-sync', function() {
     browserSync.init({
         port: 3011,
@@ -49,12 +52,15 @@ gulp.task("webpack", function(callback) {
 
 gulp.task('imagemin', function(){
 
-    return gulp.src(config.src)
-        .pipe(imagemin())
-        .pipe(gulp.dest(config.dest))
+    return gulp.src("imgs/me1.png")
+        .pipe(imagemin({
+            progressive: true,
+            use: [pngquant({quality: '65-80'})]
+        }))
+        .pipe(gulp.dest('dist'))
 })
 gulp.task('resize', function () {
-    gulp.src('imgs/me.png')
+    gulp.src('imgs/me1.png')
         .pipe(imageResize({
             width : 896
         }))
