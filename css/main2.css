@@ -1,0 +1,74 @@
+.backg2{
+
+}
+.backg2-2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background: url("../imgs/bg2-2.png") no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+}
+#section2{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: url("../imgs/bg2-1.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+
+}
+.cover-bottom-mask2{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.cover-bottom-mask2 img{
+    width: 100%;
+    display: none;
+}
+.intro-content{
+    position: absolute;
+    width: 100%;
+    bottom: 7em;
+    left: 0;
+    text-align: center;
+}
+.intro-title{
+    display: inline-block;
+    font-size: 4.5em;
+    color: #333;
+    text-align: center;
+    line-height: 1.3;
+    border-bottom: 2px solid #333;
+    opacity: 0;
+}
+.intro-body{
+    opacity:0;
+    -webkit-animation-duration: 1s;
+    /*-moz-animation-delay: 1s;*/
+    -etc-animation-iteration-count: infinite;
+}
+.intro-item{
+    margin: 0;
+    color: #333;
+    font-size: 2.7em;
+    line-height: 1.4em;
+    /*opacity:0;*/
+}
+.intro-key{
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    text-align: right;
+    margin-right: 3%;
+
+    /*opacity:0;*/
+}
+.intro-val{
+    display: inline-block;
+    vertical-align: top;
+    width: 65%;
+    text-align: left;
+}

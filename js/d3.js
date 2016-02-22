@@ -2,17 +2,31 @@
  * Created by Geo on 16/2/16.
  */
 
-var painting = function(obj){
-    d3.select(".section").selectAll("h3").text("www11com");
+var paintingline1 = function(obj){
+    //d3.select(".section").selectAll("h3").text("www11com");
     var width = 300;  //画布的宽度
     var height = 300;   //画布的高度
-
     var datasety = [300 , 250]; //y11,y21
+    paintinglineUp(obj,width,height,datasety,{"position":"absolute","top":"8%","right":0},"steelblue");
+    paintinglineDown(obj,width,height,datasety,{"position":"absolute","bottom":"20%","left":0},"steelblue");
+}
+
+var paintingline2 = function(obj){
+    //d3.select(".section").selectAll("h3").text("www11com");
+    var width = 300;  //画布的宽度
+    var height = 300;   //画布的高度
+    var datasety = [300 , 250]; //y11,y21
+    paintinglineUp(obj,width,height,datasety,{"position":"absolute","top":"8%","right":0},"#f8ccfc");
+    paintinglineDown(obj,width,height,datasety,{"position":"absolute","bottom":"50%","left":0},"#f8ccfc");
+}
+
+var paintinglineDown = function(obj,width,height,datasety,stylle,color){
+
     var svg1 = obj     //选择文档中的body元素
         .append("svg")          //添加一个svg元素
         .attr("width", width)       //设定宽度
         .attr("height", height)
-        .style({"position":"absolute","bottom":"20%","left":0});
+        .style(stylle);
     svg1.append("line");
     svg1.append("line");
 
@@ -23,7 +37,7 @@ var painting = function(obj){
             return d;
         })
 
-        .attr("stroke","steelblue").attr("stroke-width","5").transition().duration(1500).delay(500).attr("x2",function(d,i){
+        .attr("stroke",color).attr("stroke-width","5").transition().duration(1500).delay(500).attr("x2",function(d,i){
             if(i == 0){
                 return 300;
             }else {
@@ -37,12 +51,14 @@ var painting = function(obj){
                 return 100;
             }
         });
+}
 
+var paintinglineUp = function(obj,width,height,datasety,stylle,color){
     var svg2 = obj     //选择文档中的body元素
         .append("svg")          //添加一个svg元素
         .attr("width", width)       //设定宽度
         .attr("height", height)//设定高度
-        .style({"position":"absolute","top":"8%","right":0});
+        .style(stylle);
 
     svg2.append("line");
     svg2.append("line");
@@ -63,7 +79,7 @@ var painting = function(obj){
                 return 50;
             }
         })
-        .attr("stroke","steelblue").attr("stroke-width","5").transition().duration(1500).delay(500).attr("x2",function(d,i){
+        .attr("stroke",color).attr("stroke-width","5").transition().duration(1500).delay(500).attr("x2",function(d,i){
             if(i==0){
                 return 0
             }else{
@@ -78,6 +94,12 @@ var painting = function(obj){
             }
         });
 
+}
+
+
+var paintingTr = function(obj){
+    var width = 300;  //画布的宽度
+    var height = 300;   //画布的高度
     var svg3 = obj     //选择文档中的body元素
         .append("svg")          //添加一个svg元素
         .attr("width", width)       //设定宽度
@@ -92,16 +114,18 @@ var painting = function(obj){
         .style({"opacity":0,}).transition().duration(1000).delay(1500).style("opacity",1);
     svg3.append("path").attr("d"," M 40 625 L 60 655 L 70 625").attr("stroke","#3981cb").attr("stroke-width","2").attr("fill","#3981cb")
         .style("opacity",0).transition().duration(1000).delay(2000).style("opacity",0.8);
-
 }
+
 
 var clean = function(){
     d3.selectAll("svg").remove();
 }
 
 module.exports = {
-    "painting":painting,
-    "clean":clean
+    "paintingline1":paintingline1,
+    "paintingline2":paintingline2,
+    "clean":clean,
+    "paintingTr":paintingTr
 }
 
 

@@ -21,18 +21,28 @@ $(document).ready(function() {
                         $(".bg").addClass("animated fadeInUp");
                         $(".title1").removeClass("hide").addClass("animated fadeInUp");
                         $(".sub-title1").removeClass("hide").addClass("animated fadeInUp");
-                        painting.painting(d3.select("#section1"));
+                        painting.paintingline1(d3.select("#section1"));
+                        painting.paintingTr(d3.select("#section1"));
                     }
                     if (index == 2) {
-                        painting.painting(d3.select("#section2"));
+                        painting.paintingline2(d3.select("#section2"));
+                        $("#backimg2").fadeIn(800,function(){
+                            $(".intro-title").animate({"opacity":1},1000,"linear",function(){
+                                $(".intro-body").addClass("animated fadeInUp");
+                            })
+
+                        })
+
                     }
 
                     if (index == 3) {
-                        painting.painting(d3.select("#section3"));
+                        painting.paintingline1(d3.select("#section3"));
+                        painting.paintingTr(d3.select("#section3"));
                     }
 
                     if (index == 4) {
-                        painting.painting(d3.select("#section4"));
+                        painting.paintingline1(d3.select("#section4"));
+                        painting.paintingTr(d3.select("#section4"));
                     }
 
                 },
@@ -48,6 +58,9 @@ $(document).ready(function() {
                             painting.clean();
                             break;
                         case 2:
+                            $(".intro-body").removeClass("animated fadeInUp");
+                            $("#backimg2").fadeOut(200);
+                            $(".intro-title").css("opacity",0);
                             painting.clean();
                             break;
                         case 3:
