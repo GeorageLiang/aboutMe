@@ -63,7 +63,7 @@ gulp.task("webpack", function(callback) {
 
 gulp.task('imagemin', function(){
 
-    return gulp.src("imgs/me1.png")
+    return gulp.src("imgs/mm1.png")
         .pipe(imagemin({
             progressive: true,
             use: [pngquant({quality: '65-80'})]
