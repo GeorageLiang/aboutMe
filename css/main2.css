@@ -128,19 +128,19 @@
     color: #fafafa;
 }
 .flex-item .dot{
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.3em;
+    height: 1.3em;
     border-radius: 50%;
     border: 3px solid #fff;
     display: inline-block;
     vertical-align: top;
 }
 .flex-item .day{
-    font-size: 4em;
+    font-size: 3.5em;
     line-height: 1.3;
 }
 .flex-item .year{
-    font-size: 2.6em;;
+    font-size: 2em;;
     line-height: 1;
     background: rgba(255,255,255,.1);
     border-radius: 4px;
@@ -149,7 +149,7 @@
     padding: .2em;
 }
 .flex-item .event-part{
-    margin-left: 3em;
+    margin-left: 4em;
     margin-top: 1em;
     font-size: 2.5em;
     line-height: 1.4em;
