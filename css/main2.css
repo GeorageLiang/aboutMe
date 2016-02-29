@@ -149,15 +149,15 @@
     color: #fafafa;
 }
 .flex-item .dot{
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.3em;
+    height: 1.3em;
     border-radius: 50%;
     border: 3px solid #fff;
     display: inline-block;
     vertical-align: top;
 }
 .flex-item .day{
-    font-size: 4em;
+    font-size: 3em;
     line-height: 1.3;
 }
 .flex-item .year{
