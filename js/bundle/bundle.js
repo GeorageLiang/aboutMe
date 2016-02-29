@@ -97,7 +97,7 @@
 	                    if (index == 4) {
 	                        //painting.paintingline1("section4");
 	                        //painting.paintingTr("section4");
-	                        painting.paintMap();
+	                        //painting.paintMap();
 	                    }
 
 	                },
@@ -12857,33 +12857,33 @@
 
 
 	var clean = function(){
-	    for(var i in paperSet){
-	        paperSet[i].remove();
-	    }
+	    //for(var i in paperSet){
+	    //    paperSet[i].remove();
+	    //}
 	}
-	var paintMap = function(){
-	    var r = Raphael("holder", 850, 600),
-	        R = 200, param = {stroke: "red", "stroke-width": 30};
-	    r.customAttributes.arc = function (value, total, R) {
-	        var alpha = 360 / total * value,
-	            a = (90 - alpha) * Math.PI / 180,
-	            x = 300 + R * Math.cos(a),
-	            y = 300 - R * Math.sin(a),
-	            color = "red",
-	            path;
-	        if (total == value) {
-	            path = [["M", 300, 300 - R], ["A", R, R, 0, 1, 1, 299.99, 300 - R]];
-	        } else {
-	            path = [["M", 300, 300 - R], ["A", R, R, 0, 0, 1, x, y]];
-	        }
-	        return {path: path, stroke: color};
-	    };
-
-	    var sec = r.path().attr(param).attr({arc: [10, 60, R]});
-	    var sec = r.path().attr(param).attr({arc: [20, 60, R-40]});
-
-
-	}
+	//var paintMap = function(){
+	//    var r = Raphael("holder", 850, 600),
+	//        R = 200, param = {stroke: "red", "stroke-width": 30};
+	//    r.customAttributes.arc = function (value, total, R) {
+	//        var alpha = 360 / total * value,
+	//            a = (90 - alpha) * Math.PI / 180,
+	//            x = 300 + R * Math.cos(a),
+	//            y = 300 - R * Math.sin(a),
+	//            color = "red",
+	//            path;
+	//        if (total == value) {
+	//            path = [["M", 300, 300 - R], ["A", R, R, 0, 1, 1, 299.99, 300 - R]];
+	//        } else {
+	//            path = [["M", 300, 300 - R], ["A", R, R, 0, 0, 1, x, y]];
+	//        }
+	//        return {path: path, stroke: color};
+	//    };
+	//
+	//    var sec = r.path().attr(param).attr({arc: [10, 60, R]});
+	//    var sec = r.path().attr(param).attr({arc: [20, 60, R-40]});
+	//
+	//
+	//}
 
 
 	module.exports = {
