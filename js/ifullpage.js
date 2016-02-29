@@ -45,7 +45,7 @@ $(document).ready(function() {
                         $(".flex-item").eq(0).animate({"opacity":1},500,"linear",function(){
                             $(".flex-item").eq(1).animate({"opacity":1},500,"linear",function(){
                                 $(".flex-item").eq(2).animate({"opacity":1},500,"linear",function(){
-                                    $(".flex-item").eq(3).animate({"opacity":1},500,"linear").delay(300);
+                                    //$(".flex-item").eq(3).animate({"opacity":1},500,"linear").delay(300);
                                 }).delay(300);
                             }).delay(300);
                         })
