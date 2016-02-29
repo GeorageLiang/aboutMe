@@ -37,14 +37,26 @@ $(document).ready(function() {
                     }
 
                     if (index == 3) {
-                        painting.paintingline1("section3");
+                        //painting.paintingline1("section3");
+                        //$(".flex-item").addClass("animated fadeInUp");
+
                         //painting.paintingTr(d3.select("#section3"));
                         //painting.paintingline3("section3");
+                        $(".flex-item").eq(0).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
+                            $(".flex-item").eq(1).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
+                                $(".flex-item").eq(2).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
+                                    $(".flex-item").eq(3).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
+
+                                    }).delay(300);
+                                }).delay(300);
+                            }).delay(300);
+                        })
                     }
 
                     if (index == 4) {
-                        painting.paintingline1("section4");
-                        painting.paintingTr("section4");
+                        //painting.paintingline1("section4");
+                        //painting.paintingTr("section4");
+                        painting.paintMap();
                     }
 
                 },
@@ -66,6 +78,7 @@ $(document).ready(function() {
                             painting.clean();
                             break;
                         case 3:
+                            $(".flex-item").css({"opacity":0,"top":0});
                             painting.clean();
                             break;
                         case 4:

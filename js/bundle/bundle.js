@@ -83,14 +83,26 @@
 	                    }
 
 	                    if (index == 3) {
-	                        painting.paintingline1("section3");
+	                        //painting.paintingline1("section3");
+	                        //$(".flex-item").addClass("animated fadeInUp");
+
 	                        //painting.paintingTr(d3.select("#section3"));
 	                        //painting.paintingline3("section3");
+	                        $(".flex-item").eq(0).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
+	                            $(".flex-item").eq(1).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
+	                                $(".flex-item").eq(2).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
+	                                    $(".flex-item").eq(3).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
+
+	                                    }).delay(300);
+	                                }).delay(300);
+	                            }).delay(300);
+	                        })
 	                    }
 
 	                    if (index == 4) {
-	                        painting.paintingline1("section4");
-	                        painting.paintingTr("section4");
+	                        //painting.paintingline1("section4");
+	                        //painting.paintingTr("section4");
+	                        painting.paintMap();
 	                    }
 
 	                },
@@ -112,6 +124,7 @@
 	                            painting.clean();
 	                            break;
 	                        case 3:
+	                            $(".flex-item").css({"opacity":0,"top":0});
 	                            painting.clean();
 	                            break;
 	                        case 4:
@@ -12853,12 +12866,37 @@
 	        paperSet[i].remove();
 	    }
 	}
+	var paintMap = function(){
+	    var r = Raphael("holder", 850, 600),
+	        R = 200, param = {stroke: "red", "stroke-width": 30};
+	    r.customAttributes.arc = function (value, total, R) {
+	        var alpha = 360 / total * value,
+	            a = (90 - alpha) * Math.PI / 180,
+	            x = 300 + R * Math.cos(a),
+	            y = 300 - R * Math.sin(a),
+	            color = "red",
+	            path;
+	        if (total == value) {
+	            path = [["M", 300, 300 - R], ["A", R, R, 0, 1, 1, 299.99, 300 - R]];
+	        } else {
+	            path = [["M", 300, 300 - R], ["A", R, R, 0, 0, 1, x, y]];
+	        }
+	        return {path: path, stroke: color};
+	    };
+
+	    var sec = r.path().attr(param).attr({arc: [10, 60, R]});
+	    var sec = r.path().attr(param).attr({arc: [20, 60, R-40]});
+
+
+	}
+
 
 	module.exports = {
 	    "paintingline1":paintingline1,
 	    "paintingline2":paintingline2,
 	    "clean":clean,
-	    "paintingTr":paintingTr
+	    "paintingTr":paintingTr,
+	    "paintMap":paintMap
 	}
 
 
