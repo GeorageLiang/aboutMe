@@ -88,9 +88,9 @@ var paintingTr = function(obj){
 
 
 var clean = function(){
-    //for(var i in paperSet){
-    //    paperSet[i].remove();
-    //}
+    for(var i in paperSet){
+        paperSet[i].remove();
+    }
 }
 //var paintMap = function(){
 //    var r = Raphael("holder", 850, 600),
