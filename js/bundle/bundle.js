@@ -12890,8 +12890,8 @@
 	    "paintingline1":paintingline1,
 	    "paintingline2":paintingline2,
 	    "clean":clean,
-	    "paintingTr":paintingTr,
-	    "paintMap":paintMap
+	    "paintingTr":paintingTr
+
 	}
 
 
