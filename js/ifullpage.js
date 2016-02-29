@@ -2,10 +2,9 @@
  * Created by Geo on 16/2/16.
  */
 
-
-
 var $ = require("jquery");
 require("fullpage.js");
+
 var painting = require('./d3.js');
 
 $(document).ready(function() {
@@ -21,11 +20,13 @@ $(document).ready(function() {
                         $(".bg").addClass("animated fadeInUp");
                         $(".title1").removeClass("hide").addClass("animated fadeInUp");
                         $(".sub-title1").removeClass("hide").addClass("animated fadeInUp");
-                        painting.paintingline1(d3.select("#section1"));
-                        painting.paintingTr(d3.select("#section1"));
+                        painting.paintingline1("section1");
+                        painting.paintingTr("section1");
+
+
                     }
                     if (index == 2) {
-                        painting.paintingline2(d3.select("#section2"));
+                        painting.paintingline2("section2");
                         $("#backimg2").fadeIn(800,function(){
                             $(".intro-title").animate({"opacity":1},1000,"linear",function(){
                                 $(".intro-body").addClass("animated fadeInUp");
@@ -36,13 +37,14 @@ $(document).ready(function() {
                     }
 
                     if (index == 3) {
-                        painting.paintingline1(d3.select("#section3"));
-                        painting.paintingTr(d3.select("#section3"));
+                        painting.paintingline1("section3");
+                        //painting.paintingTr(d3.select("#section3"));
+                        //painting.paintingline3("section3");
                     }
 
                     if (index == 4) {
-                        painting.paintingline1(d3.select("#section4"));
-                        painting.paintingTr(d3.select("#section4"));
+                        painting.paintingline1("section4");
+                        painting.paintingTr("section4");
                     }
 
                 },
