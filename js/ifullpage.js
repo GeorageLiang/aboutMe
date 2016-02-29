@@ -54,7 +54,7 @@ $(document).ready(function() {
                     if (index == 4) {
                         //painting.paintingline1("section4");
                         //painting.paintingTr("section4");
-                        //painting.paintMap();
+                        painting.paintMap();
                     }
 
                 },
