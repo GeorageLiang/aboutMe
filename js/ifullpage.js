@@ -42,12 +42,10 @@ $(document).ready(function() {
 
                         //painting.paintingTr(d3.select("#section3"));
                         //painting.paintingline3("section3");
-                        $(".flex-item").eq(0).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
-                            $(".flex-item").eq(1).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
-                                $(".flex-item").eq(2).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
-                                    $(".flex-item").eq(3).animate({"opacity":1,"top":"-2em"},500,"linear",function(){
-
-                                    }).delay(300);
+                        $(".flex-item").eq(0).animate({"opacity":1,"top":"-20px"},500,"linear",function(){
+                            $(".flex-item").eq(1).animate({"opacity":1,"top":"-20px"},500,"linear",function(){
+                                $(".flex-item").eq(2).animate({"opacity":1,"top":"-20px"},500,"linear",function(){
+                                    $(".flex-item").eq(3).animate({"opacity":1,"top":"-20px"},500,"linear").delay(300);
                                 }).delay(300);
                             }).delay(300);
                         })
