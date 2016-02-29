@@ -100,13 +100,6 @@
     background: rgba(255,255,255,.2);
 }
 .flex-container{
-
-
-    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
-    display: -moz-box; /* Firefox 17- */
-    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
-    display: -moz-flex; /* Firefox 18+ */
-    display: -ms-flexbox; /* IE 10 */
     display: flex;
     flex-flow: column nowrap;
     justify-content:center;
@@ -120,16 +113,11 @@
 .flex-item{
     flex:1;
     margin: .15em 0;
-    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
-    display: -moz-box; /* Firefox 17- */
-    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
-    display: -moz-flex; /* Firefox 18+ */
-    display: -ms-flexbox; /* IE 10 */
     display: flex;
     align-items:center;
     opacity: 0;
     position: relative;
-    /*top: 0;*/
+    top: 0;
 }
 .flex-item .time-part{
     width: 15%;
