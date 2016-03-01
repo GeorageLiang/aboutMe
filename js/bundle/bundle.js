@@ -12870,22 +12870,74 @@
 	        R = 250, param = {stroke: "red", "stroke-width": 30};
 
 
-	    var r1 = Raphael("techs", 600, 700);
+	    var r1 = Raphael("techs", 600, 600);
 	    var tech1 = [{
-	        name:"1",
-	        num:10
+	        name:"Es5 / Jquery",
+	        num:80
 	    },{
-	        name:"1",
-	        num:20
+	        name:"Css3 / LESS",
+	        num:70
 	    },{
-	        name:"1",
+	        name:"Html5 / Jade",
+	        num:60
+	    },{
+	        name:"Bootstrap",
+	        num:60
+	    },{
+	        name:"Coffeescript / ES6",
+	        num:40
+	    }];
+
+	    var tech2 = [{
+	        name:"Backbone",
+	        num:70
+	    },{
+	        name:"Angular",
+	        num:65
+	    },{
+	        name:"NodeJs / Express",
+	        num:40
+	    },{
+	        name:"Jekyll",
+	        num:38
+	    },{
+	        name:"RaphaelJs",
+	        num:55
+	    }
+	    ];
+
+	    var tech3 = [{
+	        name:"Gulp / Grunt",
+	        num:65
+	    },{
+	        name:"WebPack",
+	        num:40
+	    },{
+	        name:"Bower",
+	        num:60
+	    },{
+	        name:"RequireJs",
 	        num:30
 	    },{
-	        name:"1",
-	        num:50
+	        name:"MarkDown",
+	        num:70
+	    }];
+
+	    var tech4 = [{
+	        name:"Webstorm",
+	        num:65
 	    },{
-	        name:"1",
-	        num:80
+	        name:"sublime",
+	        num:30
+	    },{
+	        name:"SmartGit / SourceTree",
+	        num:45
+	    },{
+	        name:"chrome",
+	        num:60
+	    },{
+	        name:"Github",
+	        num:69
 	    }];
 
 	    r.customAttributes.arc = function (value, total, R,center,color) {
@@ -12919,19 +12971,19 @@
 	         drawTechs(view,datas,color);
 	    }
 
-	    var sec1 = r.path().attr(param).attr({arc: [10, 100, R-105,false,"hsb(0.21,1,0.81)"]}).click(function(){
-	        eventTrigger(this,r1,tech1,"#97d000");
+	    var sec1 = r.path().attr(param).attr({arc: [30, 100, R-105,false,"hsb(0.21,1,0.81)"]}).click(function(){
+	        eventTrigger(this,r1,tech4,"#97d000");
 	        centerTxt.attr({"text":"Tools"});
 	    });
-	    var sec2 = r.path().attr(param).attr({arc: [30, 100, R-70,false,"hsb(0.82,0.28,1)"]}).click(function(){
-	        eventTrigger(this,r1,tech1,"#fab5ff");
+	    var sec2 = r.path().attr(param).attr({arc: [45, 100, R-70,false,"hsb(0.82,0.28,1)"]}).click(function(){
+	        eventTrigger(this,r1,tech3,"#fab5ff");
 	        centerTxt.attr({"text":"Common"});
 	    });
-	    var sec3 = r.path().attr(param).attr({arc: [50, 100, R-35,false,"hsb(0.63,0.65,0.84)"]}).click(function(){
-	        eventTrigger(this,r1,tech1,"#4866d9");
+	    var sec3 = r.path().attr(param).attr({arc: [65, 100, R-35,false,"hsb(0.63,0.65,0.84)"]}).click(function(){
+	        eventTrigger(this,r1,tech2,"#4866d9");
 	        centerTxt.attr({"text":"Advanced"});
 	    });
-	    var sec4 = r.path().attr(param).attr({arc: [60, 100, R,false,"hsb(0.54,0.86,0.8)"]}).click(function(){
+	    var sec4 = r.path().attr(param).attr({arc: [85, 100, R,false,"hsb(0.54,0.86,0.8)"]}).click(function(){
 	        eventTrigger(this,r1,tech1,"#4fa4d9");
 	        centerTxt.attr({"text":"FE-Basic"});
 	    });
@@ -12948,15 +13000,15 @@
 	    });
 
 	    $(".btn").eq(3).on("click",function(){
-	        eventTrigger(sec1,r1,tech1,"#97d000");
+	        eventTrigger(sec1,r1,tech4,"#97d000");
 	        centerTxt.attr({"text":"Tools"});
 	    });
 	    $(".btn").eq(2).on("click",function(){
-	        eventTrigger(sec2,r1,tech1,"#fab5ff");
+	        eventTrigger(sec2,r1,tech3,"#fab5ff");
 	        centerTxt.attr({"text":"Common"});
 	    });
 	    $(".btn").eq(1).on("click",function(){
-	        eventTrigger(sec3,r1,tech1,"#4866d9");
+	        eventTrigger(sec3,r1,tech2,"#4866d9");
 	        centerTxt.attr({"text":"Advanced"});
 	    });
 	    $(".btn").eq(0).on("click",function(){
@@ -12971,11 +13023,11 @@
 	        var l = data.length;
 
 	        for(var i in data){
-	            var lastNum = (data[i].num)/100*800+80;
+	            var lastNum = (data[i].num)/100*600+80;
 	            var add = 60+60*i
 	            console.log(lastNum);
 	            r1.path("M80,"+add).attr({"stroke-width":"40","stroke-opacity":"0.8","stroke":color}).animate({"path":"M80,"+add+"L"+lastNum+","+add},Math.random()*2500,"bounce");
-	            r1.text("120",add,data[i].name).attr({"font-size":"25px","fill":"white","stroke":"white" ,"text-anchor":"center"});
+	            r1.text("100",add,data[i].name).attr({"font-size":"25px","fill":"white","stroke":"white" ,"text-anchor":"start"});
 	        }
 
 	    }
