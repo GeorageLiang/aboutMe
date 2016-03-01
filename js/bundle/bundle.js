@@ -12866,25 +12866,51 @@
 	}
 	var paintMap = function(){
 	    var r = Raphael("holder", 850, 600),
-	        R = 200, param = {stroke: "red", "stroke-width": 30};
-	    r.customAttributes.arc = function (value, total, R) {
+	        R = 250, param = {stroke: "red", "stroke-width": 30};
+
+	    r.customAttributes.arc = function (value, total, R,center,color) {
 	        var alpha = 360 / total * value,
 	            a = (90 - alpha) * Math.PI / 180,
 	            x = 300 + R * Math.cos(a),
 	            y = 300 - R * Math.sin(a),
-	            color = "red",
 	            path;
 	        if (total == value) {
 	            path = [["M", 300, 300 - R], ["A", R, R, 0, 1, 1, 299.99, 300 - R]];
 	        } else {
-	            path = [["M", 300, 300 - R], ["A", R, R, 0, 0, 1, x, y]];
+	            path = [["M", 300, 300 - R], ["A", R, R, 0, +(alpha>180), 1, x, y]];
+	        }
+	        if (center == true){
+	            return {path: path, stroke: "hsb(0.58,0.72,0.48)", fill: "hsb(0.58,0.72,0.48)"};
 	        }
 	        return {path: path, stroke: color};
 	    };
 
-	    var sec = r.path().attr(param).attr({arc: [10, 60, R]});
-	    var sec = r.path().attr(param).attr({arc: [20, 60, R-40]});
-
+	    var cleanAnmit = function(){
+	        sec1.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
+	        sec2.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
+	        sec3.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
+	        sec4.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
+	    };
+	    var sec1 = r.path().attr(param).attr({arc: [10, 100, R-105,false,"hsb(0.21,1,0.81)"]}).click(function(){
+	        cleanAnmit();
+	       this.animate({"stroke-width":"70","stroke-opacity":"0.8"},500,"bounce");
+	    });
+	    var sec2 = r.path().attr(param).attr({arc: [30, 100, R-70,false,"hsb(0.82,0.28,1)"]}).click(function(){
+	        cleanAnmit();
+	        this.animate({"stroke-width":"70","stroke-opacity":"0.8"},500,"bounce");
+	    });
+	    var sec3 = r.path().attr(param).attr({arc: [50, 100, R-35,false,"hsb(0.63,0.65,0.84)"]}).click(function(){
+	        cleanAnmit();
+	        this.animate({"stroke-width":"70","stroke-opacity":"0.8"},500,"bounce");
+	    });
+	    var sec4 = r.path().attr(param).attr({arc: [60, 100, R,false,"hsb(0.54,0.86,0.8)"]}).click(function(){
+	        cleanAnmit();
+	        this.animate({"stroke-width":"70","stroke-opacity":"0.8"},500,"bounce");
+	    });
+	    var sec5 = r.path().attr(param).attr({arc: [100, 100, R-140,true]}).click(function(){
+	        cleanAnmit();
+	    });
+	    r.text("300","300","Skills").attr({"font-size":"50px","fill":"white","stroke":"white" ,"text-anchor":"center"});
 
 	}
 
