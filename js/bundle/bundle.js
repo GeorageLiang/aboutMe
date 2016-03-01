@@ -12870,7 +12870,7 @@
 	        R = 250, param = {stroke: "red", "stroke-width": 30};
 
 
-	    var r1 = Raphael("techs", 600, 600);
+	    var r1 = Raphael("techs", 600, 400);
 	    var tech1 = [{
 	        name:"Es5 / Jquery",
 	        num:80
