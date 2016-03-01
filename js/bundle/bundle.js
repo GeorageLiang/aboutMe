@@ -12962,7 +12962,7 @@
 
 	    var eventTrigger = function(obj,view,datas,color){
 	        cleanAnmit();
-	        obj.animate({"stroke-width":"80","stroke-opacity":"0.8"},500,"bounce");
+	        obj.animate({"stroke-width":"80","opacity":"0.75"},500,"elastic");
 	         drawTechs(view,datas,color);
 	    }
 
