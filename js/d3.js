@@ -218,6 +218,7 @@ var paintMap = function(){
     var centerTxt = r.text("300","300","Skills").attr({"font-size":"50px","fill":"white","stroke":"white" ,"text-anchor":"center"});
 
     centerTxt.click(function(){
+        centerTxt.attr({"text":"Skills"});
         cleanAnmit();
         r1.clear();
     });
