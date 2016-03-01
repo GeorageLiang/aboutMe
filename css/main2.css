@@ -255,3 +255,12 @@ ul li:last-child .btn{
 #techs > svg {
     top: 40px;
 }
+
+.tech-section{
+    position: relative;
+    margin-bottom: 300px;
+    top: 80px;
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+}
