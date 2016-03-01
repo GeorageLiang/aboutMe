@@ -242,10 +242,10 @@ var paintMap = function(){
         });
 
     var cleanAnmit = function(){
-        sec1.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
-        sec2.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
-        sec3.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
-        sec4.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
+        sec1.animate({"stroke-width":"30","opacity":"1"},500,"bounce");
+        sec2.animate({"stroke-width":"30","opacity":"1"},500,"bounce");
+        sec3.animate({"stroke-width":"30","opacity":"1"},500,"bounce");
+        sec4.animate({"stroke-width":"30","opacity":"1"},500,"bounce");
     };
     /*--techs---*/
 
