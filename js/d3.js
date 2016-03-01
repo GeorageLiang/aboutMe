@@ -207,8 +207,8 @@ var paintMap = function(){
         }
 
     }
-
-
+    paperSet.push(r);
+    paperSet.push(r1);
 }
 
 
