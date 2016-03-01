@@ -73,7 +73,7 @@
 	                    }
 	                    if (index == 2) {
 	                        painting.paintingline2("section2");
-	                        $("#backimg2").fadeIn(800,function(){
+	                        $("#backimg2").animate({"opacity":1},800,function(){
 	                            $(".intro-title").animate({"opacity":1},1000,"linear",function(){
 	                                $(".intro-body").addClass("animated fadeInUp");
 	                            })
@@ -100,7 +100,9 @@
 	                    if (index == 4) {
 	                        //painting.paintingline1("section4");
 	                        //painting.paintingTr("section4");
-	                        painting.paintMap();
+	                        painting.paintMap(function(){
+	                            $("#section4").animate({"opacity":1},800);
+	                        });
 	                    }
 
 	                },
@@ -117,16 +119,17 @@
 	                            break;
 	                        case 2:
 	                            $(".intro-body").removeClass("animated fadeInUp");
-	                            $("#backimg2").fadeOut(200);
-	                            $(".intro-title").css("opacity",0);
+	                            $("#backimg2").stop().css("opacity",0);
+	                            $(".intro-title").stop().css("opacity",0);
 	                            painting.clean();
 	                            break;
 	                        case 3:
-	                            $(".flex-item").css({"opacity":0,"top":0});
+	                            $(".flex-item").stop().css({"opacity":0,"top":0});
 	                            painting.clean();
 	                            break;
 	                        case 4:
-	                            //painting.clean();
+	                            $("#section4").stop().animate({"opacity":0},200);
+	                            painting.clean();
 	                            break;
 	                    }
 	                }
@@ -12865,7 +12868,7 @@
 	        paperSet[i].remove();
 	    }
 	}
-	var paintMap = function(){
+	var paintMap = function(final){
 	    var r1 = Raphael("techs", 600, 400);
 	    var r = Raphael("holder", 600, 600),
 	        R = 250, param = {stroke: "red", "stroke-width": 30};
@@ -12931,7 +12934,7 @@
 	        name:"sublime",
 	        num:30
 	    },{
-	        name:"SmartGit / SourceTree",
+	        name:"SmartGit",
 	        num:45
 	    },{
 	        name:"chrome",
@@ -12968,26 +12971,26 @@
 
 	    var sec1 = r.path().attr(param).attr({arc: [30, 100, R-105,false,"hsb(0.21,1,0.81)"]}).click(function(){
 	        eventTrigger(this,r1,tech4,"#97d000");
-	        centerTxt.attr({"text":"Tools"});
+	        centerTxt.attr({"text":"Tools \n 30%"});
 	    });
 	    var sec2 = r.path().attr(param).attr({arc: [45, 100, R-70,false,"hsb(0.82,0.28,1)"]}).click(function(){
 	        eventTrigger(this,r1,tech3,"#fab5ff");
-	        centerTxt.attr({"text":"Common"});
+	        centerTxt.attr({"text":"Common \n 45%"});
 	    });
 	    var sec3 = r.path().attr(param).attr({arc: [65, 100, R-35,false,"hsb(0.63,0.65,0.84)"]}).click(function(){
 	        eventTrigger(this,r1,tech2,"#4866d9");
-	        centerTxt.attr({"text":"Advanced"});
+	        centerTxt.attr({"text":"Advanced \n 65%"});
 	    });
 	    var sec4 = r.path().attr(param).attr({arc: [85, 100, R,false,"hsb(0.54,0.86,0.8)"]}).click(function(){
 	        eventTrigger(this,r1,tech1,"#4fa4d9");
-	        centerTxt.attr({"text":"FE-Basic"});
+	        centerTxt.attr({"text":"FE-Basic \n 85%"});
 	    });
 	    var sec5 = r.path().attr(param).attr({arc: [100, 100, R-140,true]}).click(function(){
 	        cleanAnmit();
 	        r1.clear();
 	        centerTxt.attr({"text":"Skills"});
 	    });
-	    var centerTxt = r.text("300","300","Skills").attr({"font-size":"50px","fill":"white","stroke":"white" ,"text-anchor":"center"});
+	    var centerTxt = r.text("300","300","Skills").attr({"font-size":"40px","fill":"white","stroke":"white" ,"text-anchor":"center"});
 
 	    centerTxt.click(function(){
 	        centerTxt.attr({"text":"Skills"});
@@ -12998,19 +13001,19 @@
 
 	        $(".btn").eq(3).unbind().on("click",function(){
 	            eventTrigger(sec1,r1,tech4,"#97d000");
-	            centerTxt.attr({"text":"Tools"});
+	            centerTxt.attr({"text":"Tools \n 30%"});
 	        });
 	        $(".btn").eq(2).unbind().on("click",function(){
 	            eventTrigger(sec2,r1,tech3,"#fab5ff");
-	            centerTxt.attr({"text":"Common"});
+	            centerTxt.attr({"text":"Common \n 45%"});
 	        });
 	        $(".btn").eq(1).unbind().on("click",function(){
 	            eventTrigger(sec3,r1,tech2,"#4866d9");
-	            centerTxt.attr({"text":"Advanced"});
+	            centerTxt.attr({"text":"Advanced \n 65%"});
 	        });
 	        $(".btn").eq(0).unbind().on("click",function(){
 	            eventTrigger(sec4,r1,tech1,"#4fa4d9");
-	            centerTxt.attr({"text":"FE-Basic"});
+	            centerTxt.attr({"text":"FE-Basic \n 85%"});
 	        });
 
 	    var cleanAnmit = function(){
@@ -13033,8 +13036,9 @@
 	            r1.text("100",add,data[i].name).attr({"font-size":"25px","fill":"white","stroke":"white" ,"text-anchor":"start"});
 	        }
 	    }
-	      paperSet.push(r);
-	      paperSet.push(r1);
+	    paperSet.push(r);
+	    paperSet.push(r1);
+	    final();
 	}
 
 

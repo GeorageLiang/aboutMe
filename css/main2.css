@@ -1,5 +1,5 @@
-.backg2{
-
+body{
+background-color: #091522;
 }
 .backg2-2{
     position: absolute;
@@ -26,7 +26,7 @@
 }
 .cover-bottom-mask2 img{
     width: 100%;
-    display: none;
+    opacity: 0;
 }
 .intro-content{
     position: absolute;
@@ -180,6 +180,9 @@
 #holder{
     text-align: center;
     width: 100%;
+}
+#section4{
+    opacity: 0;
 }
 
 .menu > ul{

@@ -27,7 +27,7 @@ $(document).ready(function() {
                     }
                     if (index == 2) {
                         painting.paintingline2("section2");
-                        $("#backimg2").fadeIn(800,function(){
+                        $("#backimg2").animate({"opacity":1},800,function(){
                             $(".intro-title").animate({"opacity":1},1000,"linear",function(){
                                 $(".intro-body").addClass("animated fadeInUp");
                             })
@@ -54,7 +54,9 @@ $(document).ready(function() {
                     if (index == 4) {
                         //painting.paintingline1("section4");
                         //painting.paintingTr("section4");
-                        painting.paintMap();
+                        painting.paintMap(function(){
+                            $("#section4").animate({"opacity":1},800);
+                        });
                     }
 
                 },
@@ -71,16 +73,17 @@ $(document).ready(function() {
                             break;
                         case 2:
                             $(".intro-body").removeClass("animated fadeInUp");
-                            $("#backimg2").fadeOut(200);
-                            $(".intro-title").css("opacity",0);
+                            $("#backimg2").stop().css("opacity",0);
+                            $(".intro-title").stop().css("opacity",0);
                             painting.clean();
                             break;
                         case 3:
-                            $(".flex-item").css({"opacity":0,"top":0});
+                            $(".flex-item").stop().css({"opacity":0,"top":0});
                             painting.clean();
                             break;
                         case 4:
-                            //painting.clean();
+                            $("#section4").stop().animate({"opacity":0},200);
+                            painting.clean();
                             break;
                     }
                 }
