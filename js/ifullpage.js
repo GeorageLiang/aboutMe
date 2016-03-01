@@ -80,7 +80,7 @@ $(document).ready(function() {
                             painting.clean();
                             break;
                         case 4:
-                            painting.clean();
+                            //painting.clean();
                             break;
                     }
                 }

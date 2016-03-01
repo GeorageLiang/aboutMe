@@ -126,7 +126,7 @@
 	                            painting.clean();
 	                            break;
 	                        case 4:
-	                            painting.clean();
+	                            //painting.clean();
 	                            break;
 	                    }
 	                }
@@ -12866,11 +12866,12 @@
 	    }
 	}
 	var paintMap = function(){
+	    var r1 = Raphael("techs", 600, 400);
 	    var r = Raphael("holder", 600, 600),
 	        R = 250, param = {stroke: "red", "stroke-width": 30};
 
 
-	    var r1 = Raphael("techs", 600, 400);
+
 	    var tech1 = [{
 	        name:"Es5 / Jquery",
 	        num:80
@@ -12957,17 +12958,11 @@
 	        return {path: path, stroke: color};
 	    };
 
-	    var cleanAnmit = function(){
-	        sec1.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
-	        sec2.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
-	        sec3.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
-	        sec4.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
-	    };
+
 
 	    var eventTrigger = function(obj,view,datas,color){
 	        cleanAnmit();
 	        obj.animate({"stroke-width":"80","stroke-opacity":"0.8"},500,"bounce");
-	        //drawTechs(r1,tech1,"#97d000");
 	         drawTechs(view,datas,color);
 	    }
 
@@ -12999,23 +12994,30 @@
 	        r1.clear();
 	    });
 
-	    $(".btn").eq(3).on("click",function(){
-	        eventTrigger(sec1,r1,tech4,"#97d000");
-	        centerTxt.attr({"text":"Tools"});
-	    });
-	    $(".btn").eq(2).on("click",function(){
-	        eventTrigger(sec2,r1,tech3,"#fab5ff");
-	        centerTxt.attr({"text":"Common"});
-	    });
-	    $(".btn").eq(1).on("click",function(){
-	        eventTrigger(sec3,r1,tech2,"#4866d9");
-	        centerTxt.attr({"text":"Advanced"});
-	    });
-	    $(".btn").eq(0).on("click",function(){
-	        eventTrigger(sec4,r1,tech1,"#4fa4d9");
-	        centerTxt.attr({"text":"FE-Basic"});
-	    });
 
+	        $(".btn").eq(3).unbind().on("click",function(){
+	            eventTrigger(sec1,r1,tech4,"#97d000");
+	            centerTxt.attr({"text":"Tools"});
+	        });
+	        $(".btn").eq(2).unbind().on("click",function(){
+	            eventTrigger(sec2,r1,tech3,"#fab5ff");
+	            centerTxt.attr({"text":"Common"});
+	        });
+	        $(".btn").eq(1).unbind().on("click",function(){
+	            eventTrigger(sec3,r1,tech2,"#4866d9");
+	            centerTxt.attr({"text":"Advanced"});
+	        });
+	        $(".btn").eq(0).unbind().on("click",function(){
+	            eventTrigger(sec4,r1,tech1,"#4fa4d9");
+	            centerTxt.attr({"text":"FE-Basic"});
+	        });
+
+	    var cleanAnmit = function(){
+	        sec1.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
+	        sec2.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
+	        sec3.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
+	        sec4.animate({"stroke-width":"30","stroke-opacity":"1"},500,"bounce");
+	    };
 	    /*--techs---*/
 
 	    var drawTechs = function(r1,data,color){
@@ -13029,10 +13031,9 @@
 	            r1.path("M80,"+add).attr({"stroke-width":"40","stroke-opacity":"0.8","stroke":color}).animate({"path":"M80,"+add+"L"+lastNum+","+add},Math.random()*2500,"bounce");
 	            r1.text("100",add,data[i].name).attr({"font-size":"25px","fill":"white","stroke":"white" ,"text-anchor":"start"});
 	        }
-
 	    }
-	    paperSet.push(r);
-	    paperSet.push(r1);
+	      paperSet.push(r);
+	      paperSet.push(r1);
 	}
 
 
