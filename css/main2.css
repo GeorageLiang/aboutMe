@@ -267,3 +267,93 @@ ul li:last-child .btn{
     font-size: 2em;
     color: #fff;
 }
+.icon-prev:before{
+   content: "\e601";
+}
+
+.contact{
+    font-family: 'Cabin Sketch',arial,sans-serif;
+    text-shadow: 3px 3px 0 #ddd;
+    color: #39acff;
+    font-size: 5em;
+    line-height: 1.5em;
+    text-align: center;
+
+}
+.contact-content{
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start ;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-flex-direction:column;
+    -webkit-justify-content:flex-start;
+    -webkit-align-items: center;
+    display: -moz-flex;
+    -moz-flex-direction:column;
+    -moz-justify-content:flex-start;
+    -moz-align-items: center;
+    display: -ms-flex;
+    -ms-flex-direction:column;
+    -ms-justify-content:flex-start;
+    -ms-align-items: center;
+}
+.contact-item{
+    display: flex;
+    justify-content:flex-start ;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-justify-content:flex-start ;
+    -webkit-align-items: center;
+    display: -moz-flex;
+    -moz-justify-content:flex-start  ;
+    -moz-align-items: center;
+    display: -ms-flex;
+    -ms-justify-content:flex-start  ;
+    -ms-align-items: center;
+    width: 50%;
+    margin-bottom: 1em;
+}
+
+.contact-icon{
+    font-size: 3em;
+    color: #39acff;
+}
+
+.contact-key{
+    margin-right: 1em;
+}
+.contact-value{
+    font-family: 'Cabin Sketch',arial,sans-serif;
+    color: #fff;
+    font-size: 2.2em;
+}
+
+.icon-phone:before{
+    content: "\e60b";
+}
+
+.icon-weibo:before{
+    content: "\e607";
+}
+
+.icon-qq:before{
+    content: "\e609";
+}
+
+.icon-email:before{
+    content: "\e608";
+}
+.icon-github:before{
+    content: "\e60a";
+}
+
+.icon-projct:before{
+    content: "\e606";
+}
+
+.icon-star:before{
+    content: "\e602";
+}
+
+

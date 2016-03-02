@@ -104,6 +104,12 @@
 	                            $("#section4").animate({"opacity":1},800);
 	                        });
 	                    }
+	                    if (index == 5) {
+
+	                    }
+	                    if (index == 6) {
+	                       $(".contact").addClass("animated rubberBand");
+	                    }
 
 	                },
 	                onLeave: function(index,nextIndex,direction){
@@ -130,6 +136,9 @@
 	                        case 4:
 	                            $("#section4").stop().animate({"opacity":0},200);
 	                            painting.clean();
+	                            break;
+	                        case 6:
+	                            $(".contact").removeClass("animated rubberBand");
 	                            break;
 	                    }
 	                }
