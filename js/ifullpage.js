@@ -63,6 +63,7 @@ $(document).ready(function() {
                     }
                     if (index == 6) {
                        $(".contact").addClass("animated rubberBand");
+                       $(".phone-active").addClass("animated pulse");
                     }
 
                 },
@@ -93,6 +94,7 @@ $(document).ready(function() {
                             break;
                         case 6:
                             $(".contact").removeClass("animated rubberBand");
+                            $(".phone-active").removeClass("animated pulse");
                             break;
                     }
                 }

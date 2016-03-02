@@ -72,7 +72,7 @@ gulp.task('imagemin', function(){
 });
 
 gulp.task('resize', function () {
-    gulp.src('imgs/me1.png')
+    gulp.src('imgs/me2.png')
         .pipe(imageResize({
             width : 896
         }))

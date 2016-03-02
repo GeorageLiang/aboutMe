@@ -1,6 +1,11 @@
 body{
 background-color: #091522;
 }
+.cover{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 .backg2-2{
     position: absolute;
     width: 100%;
@@ -96,7 +101,7 @@ background-color: #091522;
     top: 0;
     left: 11.5%;
     height: 100%;
-    width: 1px;
+    width: 2px;
     background: rgba(255,255,255,.2);
 }
 .flex-container{
@@ -327,6 +332,23 @@ ul li:last-child .btn{
     font-family: 'Cabin Sketch',arial,sans-serif;
     color: #fff;
     font-size: 2.2em;
+}
+.contact-value a{
+    text-decoration:none
+}
+a:link {color: #fff}
+
+.phone-active{
+    animation-duration:4s;
+    -webkit-animation-duration: 4s;
+    -moz-animation-duration: 4s;
+    -etc-animation-duration: 4s;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -etc-animation-iteration-count: infinite;
+
 }
 
 .icon-phone:before{
