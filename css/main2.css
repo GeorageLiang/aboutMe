@@ -333,10 +333,10 @@ ul li:last-child .btn{
     color: #fff;
     font-size: 2.2em;
 }
-.contact-value a{
-    text-decoration:none
+.contact-value a:link{
+    color: #fff;
 }
-a:link {color: #fff}
+a {text-decoration:none}
 
 .phone-active{
     animation-duration:4s;
@@ -370,12 +370,54 @@ a:link {color: #fff}
     content: "\e60a";
 }
 
-.icon-projct:before{
+.icon-project:before{
     content: "\e606";
+    color: #69676a;
 }
 
 .icon-star:before{
     content: "\e602";
+}
+
+.project-container{
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start ;
+    align-items: center ;
+    display: -webkit-flex;
+    -webkit-flex-direction:column;
+    -webkit-justify-content:flex-start;
+    -webkit-align-items:center ;
+    display: -moz-flex;
+    -moz-flex-direction:column;
+    -moz-justify-content:flex-start;
+    -moz-align-items: center ;
+    display: -ms-flex;
+    -ms-flex-direction:column;
+    -ms-justify-content:flex-start;
+    -ms-align-items: center ;
+}
+
+.project-title{
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+}
+.project-item{
+    width: 88%;
+}
+.project-name{
+    font-size: 2em;
+    color: #97d000;
+    margin-bottom: 10px;
+}
+.project-name a{color: #97d000; }
+
+.project-describe{
+    font-size: 2em;
+    color: #69676a;
+    margin-bottom: 10px;
+    padding-left: 2em;
 }
 
 
