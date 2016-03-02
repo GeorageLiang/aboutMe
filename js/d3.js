@@ -136,13 +136,13 @@ var paintMap = function(final){
     ];
 
     var tech3 = [{
-        name:"Gulp / Grunt",
+        name:"Gulp / Bower",
         num:65
     },{
         name:"WebPack",
         num:40
     },{
-        name:"Bower",
+        name:"Mock / underscore",
         num:60
     },{
         name:"RequireJs",
