@@ -92,7 +92,7 @@ gulp.task('uglify', function(){
 
 gulp.task('css', function() {
     return gulp.src('css/*.css')
-        .pipe(concat('main1.css'))
+        .pipe(concat('main.css'))
         .pipe(gulp.dest('css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
