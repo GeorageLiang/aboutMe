@@ -7,7 +7,7 @@ require("fullpage.js");
 
 var painting = require('./d3.js');
 
-if(!IsPC()){
+if(IsPC()){
     window.location.href="http://me.geoliang.top"
 }
 
