@@ -53,6 +53,11 @@
 
 	var painting = __webpack_require__(3);
 
+	if(IsPC()){
+	    window.location.href="http://me.geoliang.top/web/"
+	}
+
+
 	$(document).ready(function() {
 	    setTimeout(function(){
 	        $("#fullpage").css("opacity",1);
@@ -149,6 +154,21 @@
 	    },3000)
 
 	});
+
+	function IsPC() {
+	    var userAgentInfo = navigator.userAgent;
+	    var Agents = ["Android", "iPhone",
+	        "SymbianOS", "Windows Phone",
+	        "iPad", "iPod"];
+	    var flag = true;
+	    for (var v = 0; v < Agents.length; v++) {
+	        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+	            flag = false;
+	            break;
+	        }
+	    }
+	    return flag;
+	}
 
 /***/ },
 /* 1 */
