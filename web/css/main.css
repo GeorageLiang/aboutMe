@@ -1,0 +1,95 @@
+
+
+@font-face {font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_1456882935_3089085.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/font_1456882935_3089085.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1456882935_3089085.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1456882935_3089085.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1456882935_3089085.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+[class*=icon-]{
+    font-family:iconfont;speak:none;font-style:normal;font-weight:bolder;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased
+}
+
+.icon-phone:before{
+    content: "\e60b";
+}
+
+.icon-weibo:before{
+    content: "\e607";
+}
+
+.icon-qq:before{
+    content: "\e609";
+}
+
+.icon-email:before{
+    content: "\e608";
+}
+.icon-github:before{
+    content: "\e60a";
+}
+
+.icon-project:before{
+    content: "\e606";
+    color: #69676a;
+}
+
+.icon-star:before{
+    content: "\e602";
+}
+
+.project-title{
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+}
+.project-item{
+    width: 88%;
+}
+.project-name{
+    color: #97d000;
+    margin-bottom: 10px;
+}
+.project-name a{color: #97d000; }
+
+.project-describe{
+    color: #69676a;
+    margin-bottom: 10px;
+    padding-left: 2em;
+}
+
+.contact-item{
+    display: flex;
+    justify-content:flex-start ;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-justify-content:flex-start ;
+    -webkit-align-items: center;
+    display: -moz-flex;
+    -moz-justify-content:flex-start  ;
+    -moz-align-items: center;
+    display: -ms-flex;
+    -ms-justify-content:flex-start  ;
+    -ms-align-items: center;
+    width: 50%;
+   margin-top: 20px;
+}
+
+.contact-icon{
+
+    color: #39acff;
+}
+
+.contact-key{
+ margin-left: 20px;
+}
+.contact-value{
+    font-family: 'Cabin Sketch',arial,sans-serif;
+    color: #fff;
+    margin-left: 20px;
+
+}
+.contact-value a:link{
+    color: #fff;
+}
