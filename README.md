@@ -5,4 +5,5 @@ aboutMe
 - 基于fullpage，raphaelJs，impressJs，flex
 - bower+gulp+webPack
 - 七牛云cdn加速
-- 中间参考了百度百科,Eric emptystack
+- web端为了节约时间暂时采用impressJs形式
+- 移动端中间参考了百度百科,Eric emptystack
