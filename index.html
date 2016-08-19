@@ -7,29 +7,34 @@
 	<!--<link rel="stylesheet" href="/bower_components/fullpage.js/jquery.fullPage.css">-->
 
 	<!--&lt;!&ndash; endinject &ndash;&gt;-->
-<<<<<<< Updated upstream
-=======
 	<!--<link rel="stylesheet" href="./css/main1.min.css">-->
 	<!--&lt;!&ndash; inject:css &ndash;&gt;-->
->>>>>>> Stashed changes
-
-	<!-- inject:css -->
 
 
-	<link rel="stylesheet" href="/css/animate.min.css">
+	<!--<link rel="stylesheet" href="./css/animate.min.css">-->
 
 
-	<link rel="stylesheet" href="/css/main.css">
+	<!--<link rel="stylesheet" href="./css/main.css">-->
 
 
-	<!-- endinject -->
+	<!--&lt;!&ndash; endinject &ndash;&gt;-->
+	<link rel="stylesheet" href="./css/main2.css">
+
 </head>
 <body>
-
+<div class="loading"><div class="loader-inner ball-scale-ripple-multiple">
+	<div></div>
+	<div></div>
+	<div></div>
+</div></div>
 <div id="fullpage">
-	<div class="section" id="section1"><h3>第一屏</h3>
+
+	<div class="section" id="section1">
+		<div class="cover">
+			<img src="./imgs/cover-logo.png">
+		</div>
 	<div class="bg">
-		<img src="./imgs/cat.png">
+		<img src="./imgs/me1.png">
 	</div>
 	<div class="bg2"></div>
 		<!--<div class="cover-tri1"></div>-->
@@ -38,16 +43,54 @@
 		<!--<div class="cover-tri4"></div>-->
 		<div class="cover-bottom-mask"></div>
 		<h1 class="h5-title title1 hide">梁皓叙</h1>
-		<h2 class="h5-sub-title sub-title1 hide">1992/02/23 | 汉族 | 前端工程师</h2>
+		<h2 class="h5-sub-title sub-title1 hide">1992.02.23 | 汉族 | 前端工程师</h2>
+		<div class="nextPage">
+			<span class="icon-next"></span>
+		</div>
 	</div>
-	<div class="section" id="section2">第二屏</div>
+	<div class="section" id="section2">
+		<div class="backg2">
+
+		</div>
+		<div class="backg2-2"></div>
+		<div class="cover-bottom-mask2">
+			<img src="./imgs/bg2.png" id="backimg2">
+		</div>
+		<div class="intro-content">
+			<h2 class="intro-title">简介</h2>
+			<div class="intro-body">
+			<p class="intro-item">
+				<span class="intro-key">姓名</span>
+				<span class="intro-val">梁皓叙</span>
+			</p>
+			<p class="intro-item">
+				<span class="intro-key">英文名</span>
+				<span class="intro-val">Geo</span>
+			</p>
+			<p class="intro-item">
+				<span class="intro-key">个人信息</span>
+				<span class="intro-val">1992.02.23 | 双鱼座 | A型</span>
+			</p>
+			<p class="intro-item">
+				<span class="intro-key">从事职业</span>
+				<span class="intro-val">前端工程师</span>
+			</p>
+			<p class="intro-item">
+				<span class="intro-key">我的自述</span>
+				<span class="intro-val">喜欢思考，喜欢不同，爱前端，拒绝平庸，拥抱热情</span>
+			</p>
+			<p class="intro-item">
+				<span class="intro-key">我的爱好</span>
+				<span class="intro-val">爱运动，爱TED，爱github，segmentfault，掘金，知乎</span>
+			</p>
+			</div>
+		</div>
+
+		<div class="nextPage">
+			<span class="icon-next"></span>
+		</div>
+	</div>
 	<div class="section" id="section3">
-<<<<<<< Updated upstream
-		<div class="slide">第三屏的第一屏</div>
-		<div class="slide">第三屏的第二屏</div>
-		<div class="slide">第三屏的第三屏</div>
-		<div class="slide">第三屏的第四屏</div>
-=======
 		<div class="time-mask"></div>
 		<div class="time-line"></div>
 		<div class="flex-container">
@@ -229,9 +272,7 @@
 		<div class="nextPage">
 			<span class="icon-prev"></span>
 		</div>
->>>>>>> Stashed changes
 	</div>
-	<div class="section" id="section4">第四屏</div>
 </div>
 
 
@@ -247,7 +288,9 @@
 <!--<script src="/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>-->
 
 <!--&lt;!&ndash; endinject &ndash;&gt;-->
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<!--<script src="./js/d3.min.js" charset="utf-8" async></script>-->
+<script src="./js/raphael-min.js" charset="utf-8" async></script>
+
 
 <!-- inject:js -->
 
@@ -256,5 +299,6 @@
 <script src="/js/bundle/style.js"></script>
 
 <!-- endinject -->
+<script src="./js/min/all.min.js" defer></script>
 </body>
 </html>
