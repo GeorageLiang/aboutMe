@@ -1,27 +1,43 @@
 /**
- * Created by Geo on 16/2/17.
+ * Created by Administrator on 2016/12/15.
  */
-var path = require("path");
-var webpack = require("webpack");
+var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: {
-        "style": "./js/style.js",
-        "bundle": "./js/ifullpage.js"
-
-    },
+    entry: "./common.js",
     output: {
-        path: path.join(__dirname, "js/bundle"),
-        filename: "[name].js"
+        filename: "build/build.js"
     },
     module: {
+        loaders: [
+            { test: /\.jade$/, loader: "jade" },
+            //.css �ļ�ʹ�� style-loader �� css-loader ������
 
+            { test: /\.scss$/,  loader: ExtractTextPlugin.extract('style', 'css!sass') },
+            {
+                test: /\.(png|jpg|OTF)$/,
+                loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'
+            },
+            //.js �ļ�ʹ�� jsx-loader �����봦��
+            {   test: /\.js$/,
+                loader: 'babel',
+                include: [
+                    // ֻȥ��������Ŀ¼�µ� src �� demo �ļ���
+                    path.join(process.cwd(), './js')
+                ],
+                query: {
+                    presets: ['es2015']
+                }
+            }
+            //{ test: /\.js$/,    loader: "jsx-loader" }
+        ]
     },
     resolve: {
-        root: [path.join(__dirname, "bower_components")]
+        extensions: ['', '.js','.jade','.scss']
     },
     plugins: [
-        new webpack.ResolverPlugin(
-            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-        )
+        new ExtractTextPlugin("main.css"),
+        new HtmlWebpackPlugin({filename: 'index.html',template:'template/index1.jade'})
     ]
 };

@@ -1,0 +1,151 @@
+doctype html
+html
+    include header
+    body
+        .swiper-container
+            .swiper-wrapper
+                #s1.swiper-slide
+                    a.logo
+                    .man
+                        img(src="imgs/me1.png" )
+                    .bottom-mask
+                    .txt.txt1
+                        h1.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s") 梁皓叙
+                        p.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.6s") 1992.02.23 | 汉族 | 前端工程师
+                    .arrow
+                        em.icon-next
+                #s2.swiper-slide
+                    .bg
+                    .txt.txt2
+                        img.bottom-mask.ani(src="imgs/bg2.png" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0.2s")
+                        h2.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.4s") 简介
+                        .intro
+                            p.intro_item.ani(swiper-animate-effect="flipInY" swiper-animate-duration="2s" swiper-animate-delay="0.6s")
+                                span.intro_key 姓名
+                                span.intro_val 梁皓叙
+                            p.intro_item.ani(swiper-animate-effect="flipInY" swiper-animate-duration="2s" swiper-animate-delay="0.8s")
+                                span.intro_key 英文名
+                                span.intro_val Geo
+                            p.intro_item.ani(swiper-animate-effect="flipInY" swiper-animate-duration="2s" swiper-animate-delay="1s")
+                                span.intro_key 个人信息
+                                span.intro_val 1992.02.23 | 双鱼座 | A型
+                            p.intro_item.ani(swiper-animate-effect="flipInY" swiper-animate-duration="2s" swiper-animate-delay="1.2s")
+                                span.intro_key 从事职业
+                                span.intro_val 前端工程师
+                            p.intro_item.ani(swiper-animate-effect="flipInY" swiper-animate-duration="2s" swiper-animate-delay="1.4s")
+                                span.intro_key 我的自述
+                                span.intro_val 喜欢思考，喜欢不同，爱前端，拒绝平庸，拥抱热情
+                            p.intro_item.ani(swiper-animate-effect="flipInY" swiper-animate-duration="2s" swiper-animate-delay="1.6s")
+                                span.intro_key 我的爱好
+                                span.intro_val 运动，TED，Github，掘金，知乎
+                    .arrow
+                        em.icon-next
+
+                #s3.swiper-slide
+                    .time-mask
+                    .time-line
+                    .time-board
+                        .time-board_item.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0s")
+                            .time-part
+                                .dot
+                                .day 7月
+                                .year 2014
+                            .time-event
+                                p 2010.09 - 2014.06 哈尔滨
+                                p 黑龙江大学 本科
+                                p 软件工程
+                        .time-board_item.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s")
+                            .time-part
+                                .dot
+                                .day 9月
+                                .year 2014
+                            .time-event
+                                p 2014.09 - 2016.03 杭州
+                                p 个推
+                                p 前端开发工程师
+                        .time-board_item.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.6s")
+                            .time-part
+                                .dot
+                                .day 5月
+                                .year 2016
+                            .time-event
+                                p 2016.05 - 2017.05 广州
+                                p 4399
+                                p 前端开发工程师
+                        .time-board_item.ani(swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.8s")
+                            .time-part
+                                .dot
+                                .day  5月
+                                .year 2017
+                            .time-event
+                                p 2017.07 - 至今
+                                p 休整待业
+                    .arrow
+                        em.icon-next
+                #s4.swiper-slide
+                    h2.ani(swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0s") 我的技能
+                    ul.menu.ani(swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.3s")
+                        li.btn FE-Basic
+                        li.btn FE-Advanced
+                        li.btn Common
+                        li.btn Tools
+                    #holder.ani(swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.6s")
+                    #techs
+                    .arrow
+                        em.icon-next
+                #s5.swiper-slide
+                    h2.ani(swiper-animate-effect="flipInX" swiper-animate-duration="2s" swiper-animate-delay="0s") 我的项目
+                    .project.ani(swiper-animate-effect="flipInX" swiper-animate-duration="2s" swiper-animate-delay="0.3s")
+                        a.project_name.icon-project(href="https://dev.getui.com/dos4.0/index.html#login") 个推开发者平台/应景推送
+                        p.icon-star 个推开发者平台的开发和维护
+                        p.icon-star 平台基于Backbone Jquery Bootstrap RequireJs Handlebars mock underscore 以及其他第三方插件开发
+                    .project.ani(swiper-animate-effect="flipInX" swiper-animate-duration="2s" swiper-animate-delay="0.6s")
+                        a.project_name.icon-project(href="") 个推运营平台
+                        p.icon-star 个推内部运营平台的功能开发，nodeJS controller层开发和部分Angular组件封装
+                        p.icon-star 平台基于Angular1 LESS nodeJs java gulp 前端通过ajax请求，node接收，通过thrift连接node和java
+                    .project.ani(swiper-animate-effect="flipInX" swiper-animate-duration="2s" swiper-animate-delay="0.9s")
+                        a.project_name.icon-project(href="http://detect.getui.com/") 个推网络检测工具
+                        p.icon-star 前端静态页面以及中间层node的开发
+                        p.icon-star 使用了Jquery handlebars css3 nodejs
+                    .project.ani(swiper-animate-effect="flipInX" swiper-animate-duration="2s" swiper-animate-delay="1.2s")
+                        a.project_name.icon-project(href="http://georageliang.github.io/") 个人Blog
+                        p.icon-star
+                            a(href="http://georageliang.github.io/") 基于Jekyll框架开发的个人博客
+                        p.icon-star
+                            a(href="http://hblog.geoliang.top//") 新blog
+
+                        p.icon-star 主要使用了Jekyll Jquery css3 markdown和第三方插件，并修复了首页动画插件的清除的问题/基于Hexo的博客
+
+                    .project.ani(swiper-animate-effect="flipInX" swiper-animate-duration="2s" swiper-animate-delay="1.5s")
+                        a.project_name.icon-project(href="http://hblog.geoliang.top/") 个人简历
+                        p.icon-star 一个基于swiper开发的个人简历，中间参考了百度百科,Eric emptystack,使用了Raphael jade sass webPack flex
+                    .project.ani(swiper-animate-effect="flipInX" swiper-animate-duration="2s" swiper-animate-delay="1.8s")
+                        a.project_name.icon-project(href="http://geo_liang.coding.me/parallax/") 静态页面
+                        p.icon-star 参考parallax官网页面制作，使用parallax制作
+                    .project.ani(swiper-animate-effect="flipInX" swiper-animate-duration="2s" swiper-animate-delay="2.1s")
+                        a.project_name.icon-project(href="https://github.com/GeorageLiang/work_ladder") work_ladder
+                        p.icon-star 基于业务搭建的页面重构自动化开发环境，npm script，jade，sass，es6，browser-sync，精灵图，图片压缩，打包，字体文件转换等
+
+
+                    .arrow
+                        em.icon-next
+
+
+
+                #s6.swiper-slide
+                    h2.ani(swiper-animate-effect="rubberBand" swiper-animate-duration="2s" swiper-animate-delay="0s") Contact Me
+                    section
+                        p
+                            em.icon-phone
+                            a.tel.ani(href="tel:15669971343" swiper-animate-effect="pulse" swiper-animate-duration="4s" swiper-animate-delay="0s" swiper-animate-iteration-count="infinite") 156 6997 1343
+                        p
+                            em.icon-weibo
+                            a(href="tel:15669971343") 奥特蛋 Geo
+                        p
+                            em.icon-email
+                            a(href="tel:15669971343") 117 069 1438@qq.com
+                        p
+                            em.icon-github
+                            a(href="https://github.com/GeorageLiang") GeorageLiang
+                    .arrow
+                        em.icon-prev

@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+// flex 布局分三个版本:
+// 1. 旧版本(old)     : IE 和 opera 都不支持, 没有必要写前缀
+// 2. 混合版本(hybird): 一直以来只有 IE10 才支持
+// 3. 新版本(new)     : iso6 下 safari 浏览器不支持
+@mixin display-flex() {
+  display: -webkit-box;  // Chrome 4+, Safari 3.1, iOS Safari 3.2+
+  display: box;
+  display: -webkit-flex; // Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16
+  display: flex;         // Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+
+}
+
+// flex-direction: row | row-reverse | column | column-reverse
+@mixin flex-direction-back($direction) {
+  @if $direction == row { // old 版本还有 inline-axis | block-axis, 暂不考虑
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+  } @else if $direction == column {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+  } @else if $direction == row-reverse {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    box-direction: reverse;
+  } @else {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    box-direction: reverse;
+  }
+}
+@mixin flex-direction($direction) {
+  @include flex-direction-back($direction);
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+
+// flex-wrap: nowrap | wrap | wrap-reverse
+@mixin flex-wrap-back($param) {
+  @if $param == nowrap { // box-lines 好像没有浏览器支持
+    -webkit-box-lines: single;
+    -moz-box-lines: single;
+    box-lines: single;
+  } @else if $param == wrap {
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+  } @else {
+    // box-lines 没有 wrap-reverse 的对应项
+    // TODO: 旧版本可以通过侧轴的end实现, 要不要加上, 补充在这里呢???
+  }
+}
+@mixin flex-wrap($param) {
+  @include flex-wrap-back($param);
+  -webkit-flex-wrap:$param;
+  -ms-flex-wrap:$param;
+  flex-wrap:$param;
+}
+
+// flex-flow:  flex-direction 和 flex-wrap 的合并
+// old 版本没有
+@mixin flexFlow($paramA, $paramB) {
+  -webkit-flex-flow: $paramA, $paramB;
+  -moz-flex-flow: $paramA, $paramB;
+  -ms-flex-flow: $paramA, $paramB;
+  flex-flow: $paramA, $paramB;
+  @include flex-direction-back($paramA);
+  @include flex-wrap-back($paramB);
+}
+
+// justify-content: flex-start | flex-end | center | space-between | space-around
+@mixin justify-content-back($param) {
+  @if $param == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    box-pack: start;      // old
+    -ms-flex-pack: start;
+    flex-pack: start;     //hybird
+  } @else if $param == flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    box-pack: end;
+    -ms-flex-pack: end;
+    flex-pack: end;
+  } @else if $param == center {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -ms-flex-pack: center;
+    flex-pack: center;
+  } @else { // 老版本没有 space-around 效果, 混合版本没有 space-between 效果, 相互替代
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;
+    -ms-flex-pack: distribute;
+    flex-pack: distribute;
+  }
+}
+@mixin justify-content($param) {
+  @include justify-content-back($param);
+  -webkit-justify-content: $param;
+  justify-content: $param;
+}
+
+// align-items: stretch | flex-start | flex-end | center | baseline
+@mixin align-items-back($param) {
+  @if $param == flex-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    box-align: start;     // old
+    -ms-flex-pack: start;
+    flex-pack: start;     //hybird
+  } @else if $param == flex-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    box-align: end;
+    -ms-flex-align: end;
+    flex-align: end;
+  } @else {// 当 box-orient 值为 vertical, ox-align 取 baseline 时, webkit内核以 center 方式显示, firefox 却以 start 方式显示
+    -webkit-box-align: $param;
+    -moz-box-align: $param;
+    box-align: $param;
+    -ms-flex-align: $param;
+    flex-align: $param;
+  }
+}
+@mixin align-items($param){
+  @include align-items-back($param);
+  -webkit-align-items: $param;
+  align-items: $param;
+}
+
+// align-content: stretch | flex-start | flex-end | center | space-between | space-around
+// 堆栈伸缩行 old 版本没有该属性, 前提: flex-wrap: wrap;
+@mixin align-content-back($param) {
+  @if $param == flex-start {
+    -ms-flex-line-pack: start;
+    flex-line-pack: start;
+  } @else if $param == flex-end {
+    -ms-flex-line-pack: end;
+    flex-line-pack: end;
+  } @else if $param == center {
+    -ms-flex-line-pack: center;
+    flex-line-pack: center;
+  } @else if $param == space-between {
+    -ms-flex-line-pack: justify;
+    flex-line-pack: justify;
+  } @else if $param == space-around {
+    -ms-flex-line-pack: distribute;
+    flex-line-pack: distribute;
+  } @else {
+    -ms-flex-line-pack: $param;
+    flex-line-pack: $param;
+  }
+}
+@mixin align-content($param) {
+  @include align-items-back($param);
+  -webkit-align-content: $param;
+  align-content: $param;
+}
+
+// flex: flex-grow flex-shrink flex-basis 的合并
+// 强制三个参数, 或者1个参数, 不允许两个参数, 不推荐这种方式.
+@mixin flex($grow, $shrink: 1, $basis: auto) {
+  -webkit-box-flex: $grow;
+  -moz-box-flex: $grow;
+  box-flex: $grow;  // old 注意点: 如果定宽的盒子声明某个方向的 margin 为 auto, 那么它会占据 100% 的空间, 坑.
+  @if($grow == none) {
+    -webkit-flex: none;
+    -ms-flex: none; // hybird, 压缩属性不能为负值
+    flex: none;
+  } @else {
+    -webkit-flex: $grow $shrink $basis;
+    -ms-flex: $grow $shrink $basis;
+    flex: $grow $shrink $basis;
+  }
+}
+
+// flex-grow
+@mixin flex-grow($grow) {
+  -webkit-box-flex: $grow;
+  -moz-box-flex: $grow;
+  box-flex: $grow; // old 注意 margin
+  -ms-flex: $grow; // 为了兼容, old 和 hybird 不支持分写
+  -webkit-flex-grow: $grow;
+  flex-grow: $grow;
+}
+
+// flex-shrink
+//只有最新版才有此属性
+@mixin flex-shrink($shrink) {
+  -webkit-flex-grow: $shrink;
+  flex-grow: $shrink;
+}
+
+// order
+@mixin order($num) {//默认值1
+  -webkit-box-ordinal-group: $num;
+  -moz-box-ordinal-group: $num;
+  box-ordinal-group: $num; //old
+  -ms-flex-order: $num;
+  flex-order: $num;// hybird
+  -webkit-order: $num;
+  order: $num;
+}
