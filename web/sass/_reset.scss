@@ -1,0 +1,30 @@
+
+body, dl, dd, /* dt, Ä¬ÈÏÃ»±ß¾à */
+ul, ol, /*li, Ä¬ÈÏÃ»±ß¾à */
+h1, h2, h3, h4, h5, h6, pre, /* code, Ä¬ÈÏÃ»±ß¾à */
+form, fieldset, legend, input, textarea, optgroup,
+p, blockquote, figure, hr, menu, dir,
+thead, tbody, tfoot, th, td /* th, td Ä¬ÈÏ padding:1px */
+{
+  margin:0;
+  padding:0;
+}
+img {
+  border: 0 none; /* 1 */
+  width: auto\9; /* 2 */
+  height: auto; /* 3 */
+  max-width: 100%; /* 4 */
+  vertical-align: top;/* 5 */
+  -ms-interpolation-mode: bicubic; /* 6 */
+}
+input {
+  padding: 0; border: 0px solid transparent; margin: 0;
+  &:focus {  outline: 0;  }
+  @at-root input::-moz-focus-inner{  border: 0;  }
+}
+input, button, select, textarea {  outline: none; padding: 0; border: none; margin: 0;  }
+textarea {  resize: none;  }
+li {  vertical-align: bottom; list-style: none;  }
+em, i {  font-style: normal;  }
+a {  cursor: pointer; blr: expression(this.onFocus=this.blur()); outline: none; text-decoration: none;  }
+.clearfix{overflow:auto;_height:1%}
