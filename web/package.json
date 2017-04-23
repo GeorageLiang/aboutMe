@@ -1,0 +1,40 @@
+{
+  "name": "work_ladder",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass sass -o css",
+    "sassfilter": "npm-run-all --parallel sass autoprefix",
+    "serve": "browser-sync start --port 3010 --server  --files *.html,css/*.css --browser chrome",
+    "watch:sass": "onchange sass/*.scss sass/*/*.scss -- npm run sass",
+    "server": "npm-run-all --parallel serve sass watch:sass jade watch:jade",
+    "jade": "jade -P tpl/index.jade --out ./",
+    "watch:jade": "onchange tpl/*.jade  -- npm run jade",
+    "autoprefix": "postcss --use autoprefixer style/*.css -d build/",
+    "zip": "node shell/zip",
+    "fontTrans": "node shell/font"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "browser-sync": "^2.13.0",
+    "colors": "^1.1.2",
+    "easy-zip2": "^1.0.0",
+    "imagemin-svgo": "^5.2.0",
+    "node-sass": "^3.7.0",
+    "npm-run-all": "^2.1.1",
+    "onchange": "^2.5.0",
+    "postcss-cli": "^2.5.2",
+    "sass-loader": "^3.2.0",
+    "sprity": "^1.0.8",
+    "susy": "^2.2.12",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "fontmin": "^0.9.6",
+    "sprity": "^1.0.8"
+  }
+}
