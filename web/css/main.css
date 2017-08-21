@@ -192,14 +192,7 @@ html, body {
   position: absolute;
   width: 100%;
   height: 170px;
-  top: 20px;
-  animation: wave 4s linear 0s infinite;
-  /* Firefox: */
-  -moz-animation: wave 4s linear 0s infinite;
-  /* Safari 和 Chrome: */
-  -webkit-animation: wave 4s linear 0s infinite;
-  /* Opera: */
-  -o-animation: wave 4s linear 0s infinite; }
+  top: 20px; }
   .clouds .cl1 {
     left: 15%;
     width: 104px;
@@ -264,8 +257,7 @@ section {
 
 .s0 {
   background-image: -webkit-linear-gradient(to bottom, deepskyblue, #d4edf9);
-  background-image: linear-gradient(to bottom, deepskyblue, #d4edf9);
-  overflow-x: hidden; }
+  background-image: linear-gradient(to bottom, deepskyblue, #d4edf9); }
   .s0 .wavs {
     height: 170px; }
   .s0 .ball {
@@ -285,42 +277,21 @@ section {
     background-size: auto 100%;
     width: 100%;
     height: 170px;
-    top: 0;
-    animation: wave 3s linear 0s infinite;
-    /* Firefox: */
-    -moz-animation: wave 3s linear 0s infinite;
-    /* Safari 和 Chrome: */
-    -webkit-animation: wave 3s linear 0s infinite;
-    /* Opera: */
-    -o-animation: wave 3s linear 0s infinite; }
+    top: 0; }
   .s0 .c2 {
     position: absolute;
     background: url(../imgs/c2.png) repeat-x;
     background-size: auto 100%;
     width: 100%;
     height: 170px;
-    top: 10px;
-    animation: wave 4s linear 0s infinite;
-    /* Firefox: */
-    -moz-animation: wave 4s linear 0s infinite;
-    /* Safari 和 Chrome: */
-    -webkit-animation: wave 4s linear 0s infinite;
-    /* Opera: */
-    -o-animation: wave 4s linear 0s infinite; }
+    top: 10px; }
   .s0 .c3 {
     position: absolute;
     background: url(../imgs/c3.png) repeat-x;
     background-size: auto 100%;
     width: 100%;
     height: 170px;
-    top: 60px;
-    animation: wave 5s linear 0s infinite;
-    /* Firefox: */
-    -moz-animation: wave 5s linear 0s infinite;
-    /* Safari 和 Chrome: */
-    -webkit-animation: wave 5s linear 0s infinite;
-    /* Opera: */
-    -o-animation: wave 5s linear 0s infinite; }
+    top: 60px; }
   .s0 .c4 {
     position: absolute;
     background: url(../imgs/c4.png) repeat-x;
@@ -363,8 +334,7 @@ section {
 
 .s1 {
   width: 100%;
-  height: 100%;
-  overflow-x: hidden; }
+  height: 100%; }
   .s1 article {
     padding-top: 20%;
     font-size: 8px; }
