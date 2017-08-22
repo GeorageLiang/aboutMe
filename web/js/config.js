@@ -9,7 +9,7 @@ seajs.config({
         'dep': 'js/dep'
     },
     alias: {
-        'jquery':'dep/jquery-1.10.1.min',
+        'jquery':'http://ov2f52i4q.bkt.clouddn.com/jquery-1.10.1.min',
         'raphael':'dep/raphael',
         'eve':'dep/eve',
         'particle':'dep/particle',
