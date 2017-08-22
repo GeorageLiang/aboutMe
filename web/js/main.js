@@ -1,10 +1,9 @@
 define(function(require, exports, module){
     require('jquery');
-    require('skroll');
-    require('particle');
-
 
     $("document").ready(function(){
+        require('skroll');
+        require('particle');
         var s = skrollr.init({
             forceHeight:false
         });
