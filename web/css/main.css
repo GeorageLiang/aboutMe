@@ -438,13 +438,41 @@ section {
       float: left;
       margin-right: 24px; }
       .s3 .menu li:first-child {
-        background: #4fa4d9; }
+        background: #4fa4d9;
+        animation: breath 2s linear 0s infinite;
+        /* Firefox: */
+        -moz-animation: breath 2s linear 0s infinite;
+        /* Safari 和 Chrome: */
+        -webkit-animation: breath 2s linear 0s infinite;
+        /* Opera: */
+        -o-animation: breath 2s linear 0s infinite; }
       .s3 .menu li:nth-child(2) {
-        background: #4866d9; }
+        background: #4866d9;
+        animation: breath 2.5s linear 0s infinite;
+        /* Firefox: */
+        -moz-animation: breath 2.5s linear 0s infinite;
+        /* Safari 和 Chrome: */
+        -webkit-animation: breath 2.5s linear 0s infinite;
+        /* Opera: */
+        -o-animation: breath 2.5s linear 0s infinite; }
       .s3 .menu li:nth-child(3) {
-        background: #fab5ff; }
+        background: #fab5ff;
+        animation: breath 3s linear 0s infinite;
+        /* Firefox: */
+        -moz-animation: breath 3s linear 0s infinite;
+        /* Safari 和 Chrome: */
+        -webkit-animation: breath 3s linear 0s infinite;
+        /* Opera: */
+        -o-animation: breath 3s linear 0s infinite; }
       .s3 .menu li:last-child {
-        background: #97d000; }
+        background: #97d000;
+        animation: breath 3.5s linear 0s infinite;
+        /* Firefox: */
+        -moz-animation: breath 3.5s linear 0s infinite;
+        /* Safari 和 Chrome: */
+        -webkit-animation: breath 3.5s linear 0s infinite;
+        /* Opera: */
+        -o-animation: breath 3.5s linear 0s infinite; }
   .s3 .bottom {
     position: absolute;
     bottom: 0;
