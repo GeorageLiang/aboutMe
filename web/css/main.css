@@ -508,13 +508,16 @@ section {
         padding-left: 2em;
         line-height: 2em; }
   .s3 .art2 {
-    margin-top: 30%;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    margin-left: -150px;
     font-size: 12px; }
     .s3 .art2 h2 {
       font-size: 3em; }
     .s3 .art2 section {
       width: 300px;
-      margin: 0 auto;
+      margin: 30px auto;
       font-size: 1.5em;
       color: #fff; }
       .s3 .art2 section a {
