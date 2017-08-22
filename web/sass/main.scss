@@ -51,7 +51,7 @@ html,body{
 .wave{
   width: 100%;
   height: 170px;
-  background: url(../imgs/wave.png) repeat-x;
+  background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-wave.png) repeat-x;
   background-position: 0 0;
   @include animation(cloud,3.5s,infinite);
 }
@@ -73,7 +73,7 @@ html,body{
 }
 .w5{
   position: absolute;top:90px;
-  background: url(../imgs/wave2.png) repeat-x;
+  background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-wave2.png) repeat-x;
   background-position: 0px 20px;
   @include animation(cloud,7s,infinite);
 }
@@ -86,9 +86,9 @@ html,body{
 }
 
 
-.cld{ position: absolute; background: url(../imgs/cloud1.png)no-repeat;background-size: 100%;}
+.cld{ position: absolute; background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-cloud1.png)no-repeat;background-size: 100%;}
 .clouds{position: absolute;width: 100%;height: 170px;top:20px;
-  @include animation(wave,4s,infinite);
+  //@include animation(wave,4s,infinite);
   .cl1{
     left: 15%;
     width: 104px;height: 170px;
@@ -133,31 +133,31 @@ section{
   }
   .c1{
     position: absolute;
-    background: url(../imgs/c1.png) repeat-x;
+    background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-c1.png) repeat-x;
     background-size: auto 100%;
     width: 100%;height: 170px;
     top:0;
-    @include animation(wave,3s,infinite);
+    //@include animation(wave,3s,infinite);
   }
   .c2{
     position: absolute;
-    background: url(../imgs/c2.png) repeat-x;
+    background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-c2.png) repeat-x;
     background-size: auto 100%;
     width: 100%;height: 170px;
     top:10px;
-    @include animation(wave,4s,infinite);
+    //@include animation(wave,4s,infinite);
   }
   .c3{
     position: absolute;
-    background: url(../imgs/c3.png) repeat-x;
+    background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-c3.png) repeat-x;
     background-size: auto 100%;
     width: 100%;height: 170px;
     top:60px;
-    @include animation(wave,5s,infinite);
+    //@include animation(wave,5s,infinite);
   }
   .c4{
     position: absolute;
-    background: url(../imgs/c4.png) repeat-x;
+    background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-c4.png) repeat-x;
     background-size: auto 100%;
     width: 100%;height: 170px;
     top:80px;
@@ -247,10 +247,11 @@ section{
     z-index: 2;
     li{
       float: left;margin-right: 24px;
-      &:first-child{background: #4fa4d9}
-      &:nth-child(2){background: #4866d9}
-      &:nth-child(3){background: #fab5ff}
-      &:last-child{background: #97d000}
+
+      &:first-child{background: #4fa4d9;@include animation(breath,2s,infinite);}
+      &:nth-child(2){background: #4866d9;@include animation(breath,2.5s,infinite);}
+      &:nth-child(3){background: #fab5ff;@include animation(breath,3s,infinite);}
+      &:last-child{background: #97d000;@include animation(breath,3.5s,infinite);}
     }
   }
   .bottom{
@@ -274,10 +275,12 @@ section{
     }
   }
   .art2{
-    margin-top: 30%;font-size: 12px;
+    position: absolute;
+    bottom: 15%;left: 50%;
+    margin-left: -150px;font-size: 12px;
     h2{font-size: 3em;}
     section{
-      width: 300px;margin: 0 auto;font-size: 1.5em;color: #fff;
+      width: 300px;margin: 30px auto;font-size: 1.5em;color: #fff;
       a{color: #fff}
       p{@include animation(wave,3s,infinite);}
       p em{margin-right: 1.5em;line-height: 2em;}

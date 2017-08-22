@@ -9,11 +9,11 @@ seajs.config({
         'dep': 'js/dep'
     },
     alias: {
-        'jquery':'dep/jquery-1.10.1.min',
-        'raphael':'dep/raphael',
-        'eve':'dep/eve',
+        'jquery':'http://ov2f52i4q.bkt.clouddn.com/jquery-1.10.1.min',
+        'raphael':'http://ov2f52i4q.bkt.clouddn.com/raphael',
+        'eve':'http://ov2f52i4q.bkt.clouddn.com/eve',
         'particle':'dep/particle',
-        'skroll':'dep/skroll'
+        'skroll':'http://ov2f52i4q.bkt.clouddn.com/skroll'
     }
 });
 
