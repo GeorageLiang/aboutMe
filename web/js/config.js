@@ -9,7 +9,7 @@ seajs.config({
         'dep': 'js/dep'
     },
     alias: {
-        'jquery':'https://cdn.bootcss.com/jquery/3.2.1/jquery.min',
+        'jquery':'dep/jquery-1.10.1.min',
         'raphael':'dep/raphael',
         'eve':'dep/eve',
         'particle':'dep/particle',
