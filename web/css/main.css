@@ -107,7 +107,7 @@ html, body {
 .wave {
   width: 100%;
   height: 170px;
-  background: url(../imgs/wave.png) repeat-x;
+  background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-wave.png) repeat-x;
   background-position: 0 0;
   animation: cloud 3.5s linear 0s infinite;
   /* Firefox: */
@@ -154,7 +154,7 @@ html, body {
 .w5 {
   position: absolute;
   top: 90px;
-  background: url(../imgs/wave2.png) repeat-x;
+  background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-wave2.png) repeat-x;
   background-position: 0px 20px;
   animation: cloud 7s linear 0s infinite;
   /* Firefox: */
@@ -185,7 +185,7 @@ html, body {
 
 .cld {
   position: absolute;
-  background: url(../imgs/cloud1.png) no-repeat;
+  background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-cloud1.png) no-repeat;
   background-size: 100%; }
 
 .clouds {
@@ -273,28 +273,28 @@ section {
     -o-animation: wave 3s linear 0s infinite; }
   .s0 .c1 {
     position: absolute;
-    background: url(../imgs/c1.png) repeat-x;
+    background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-c1.png) repeat-x;
     background-size: auto 100%;
     width: 100%;
     height: 170px;
     top: 0; }
   .s0 .c2 {
     position: absolute;
-    background: url(../imgs/c2.png) repeat-x;
+    background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-c2.png) repeat-x;
     background-size: auto 100%;
     width: 100%;
     height: 170px;
     top: 10px; }
   .s0 .c3 {
     position: absolute;
-    background: url(../imgs/c3.png) repeat-x;
+    background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-c3.png) repeat-x;
     background-size: auto 100%;
     width: 100%;
     height: 170px;
     top: 60px; }
   .s0 .c4 {
     position: absolute;
-    background: url(../imgs/c4.png) repeat-x;
+    background: url(http://ov2f52i4q.bkt.clouddn.com/2017-08-22-c4.png) repeat-x;
     background-size: auto 100%;
     width: 100%;
     height: 170px;
